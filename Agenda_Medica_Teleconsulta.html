@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Agenda Médica</title>
+<meta name="theme-color" content="#185FA5" />
+<link rel="apple-touch-icon" href="data:image/png;base64,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" />
+<link rel="icon" type="image/png" href="data:image/png;base64,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tmoyWBiux3mncqsfAtp29AT6urtgmhERkcikyZPbS5X9Bc9JfzuizIXCrv3moX1k+MkSiJRfi7/AZ4QkfHqzpaWFd+78Uz+A/vdSbPzGd75z4Jvbtn3byngTK8rLuKuzk7645au45tqlME0TWZ9mnx/MoOialdF5IZtZCp44SabSON3bi0xyDOm0xSLgsrKy+IHX2168554bV3SfGv9mxvEeyTgOtPYyVibDVZXFiqDffL8PShIKClbnb/X19cbRo0eddatuenIk5f69ZetUxKCIp4UoyALJCKpCOiczySB/kYQLViKsAfhsTlBEiEYMjCfGJJVKemUVVaW11aWbX3llz/dDzG5ces2GhGV/08o4VwopTKiqeH5hTXXjMy++aL1byX9QT6DSA3etrDrRn34+nkwvSzseALBfXpB82w7es+UPkvxykEhezRl++VSYmFkxMxUVF2FCedmv766quL85VxonAPrh9etLD/X0rFJK2bv3vbGLqDCX+yAByKqPxlis/FRi5MuptHuv47p1WnORBJsHgmzSRfm7S0HNkFiEiUDMIsF5Cv5DSinLNI0TFSUlP9nXduh7757cOR6iOkMRfZAAFNxQmprU6ueeq804ieJga0+UUhKEMQqPc37v/8bMlBctiEUIKEaknJJ79x4akPNviOU9hX7pH7K8YBBisZj5QXUelMHpYlborwbEJb6n/Het6OV2uV1ul9vldrldbv832n8B6LkyTQbC3LQAAAAASUVORK5CYII=" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue-50:#E6F1FB;--blue-100:#B5D4F4;--blue-200:#85B7EB;
+    --blue-400:#378ADD;--blue-600:#185FA5;--blue-800:#0C447C;
+    --gray-50:#F8F9FA;--gray-100:#F1F3F5;--gray-200:#E9ECEF;
+    --gray-300:#DEE2E6;--gray-400:#ADB5BD;--gray-600:#6C757D;
+    --gray-700:#495057;--gray-800:#343A40;--gray-900:#212529;
+    --white:#FFFFFF;
+    --font:'DM Sans',system-ui,sans-serif;
+    --radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:24px;
+  }
+  body{font-family:var(--font);background:var(--gray-100);color:var(--gray-800);min-height:100vh;}
+  .app{display:flex;min-height:100vh;}
+
+  /* SIDEBAR */
+  .sidebar{width:72px;background:var(--white);border-right:1px solid var(--gray-200);display:flex;flex-direction:column;align-items:center;padding:20px 0;gap:6px;position:fixed;top:0;left:0;height:100vh;z-index:100;}
+  .sidebar-logo{width:40px;height:40px;background:transparent;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden;flex-shrink:0;}
+  .sidebar-logo svg{width:22px;height:22px;}
+  .sidebar-logo img{width:100%;height:100%;object-fit:contain;}
+  .topbar-logo{width:28px;height:28px;border-radius:var(--radius-sm);object-fit:cover;flex-shrink:0;}
+  .nav-item{width:44px;height:44px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;transition:background 0.15s;color:var(--gray-400);}
+  .nav-item:hover{background:var(--blue-50);color:var(--blue-600);}
+  .nav-item.active{background:var(--blue-50);color:var(--blue-600);}
+  .nav-item svg{width:20px;height:20px;}
+  .nav-badge{position:absolute;top:6px;right:6px;width:8px;height:8px;background:#E24B4A;border-radius:50%;border:2px solid var(--white);}
+  .sidebar-bottom{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .avatar-sm{width:36px;height:36px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--blue-800);cursor:pointer;}
+
+  /* MAIN */
+  .main{margin-left:72px;flex:1;display:flex;flex-direction:column;}
+
+  /* TOPBAR */
+  .topbar{background:var(--white);border-bottom:1px solid var(--gray-200);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;}
+  .topbar-left{display:flex;flex-direction:column;}
+  .topbar-title{font-size:16px;font-weight:600;color:var(--gray-900);letter-spacing:-0.3px;}
+  .topbar-sub{font-size:12px;color:var(--gray-400);margin-top:1px;}
+  .topbar-right{display:flex;align-items:center;gap:10px;}
+  .btn-primary{background:var(--blue-600);color:white;border:none;border-radius:var(--radius-md);padding:8px 16px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:var(--font);transition:background 0.15s;}
+  .btn-primary:hover{background:var(--blue-800);}
+  .btn-ghost{background:transparent;color:var(--gray-600);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);transition:all 0.15s;}
+  .btn-ghost:hover{border-color:var(--blue-200);color:var(--blue-600);background:var(--blue-50);}
+
+  /* MODULE WRAPPER */
+  .module{display:none;padding:24px 28px;flex:1;}
+  .module.active{display:block;}
+
+  /* DASHBOARD CONTENT GRID */
+  .dash-grid{display:grid;grid-template-columns:1fr 320px;gap:20px;}
+
+  /* STAT CARDS */
+  .stats-row{grid-column:1 / -1;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .stat-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-200);padding:18px 20px;}
+  .stat-label{font-size:11px;font-weight:500;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;}
+  .stat-value{font-size:26px;font-weight:600;color:var(--gray-900);letter-spacing:-0.5px;margin-bottom:4px;}
+  .stat-change{font-size:12px;color:var(--gray-400);display:flex;align-items:center;gap:4px;}
+  .stat-up{color:#3B6D11;}
+  .stat-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:2px;}
+  .dot-blue{background:var(--blue-400);}.dot-green{background:#63C132;}.dot-amber{background:#EF9F27;}.dot-red{background:#E24B4A;}
+
+  /* PANELS */
+  .panel{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-200);overflow:hidden;}
+  .panel-header{padding:18px 20px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray-100);}
+  .panel-title{font-size:14px;font-weight:600;color:var(--gray-900);}
+  .panel-action{font-size:12px;color:var(--blue-600);cursor:pointer;font-weight:500;}
+
+  /* CALENDAR */
+  .cal-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 10px;}
+  .cal-month{font-size:14px;font-weight:600;color:var(--gray-900);}
+  .cal-arrows{display:flex;gap:4px;}
+  .cal-arrow{width:28px;height:28px;border-radius:var(--radius-sm);background:var(--gray-100);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gray-600);font-size:14px;font-family:var(--font);}
+  .cal-arrow:hover{background:var(--blue-50);color:var(--blue-600);}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);padding:0 16px 16px;gap:2px;}
+  .cal-day-name{font-size:11px;font-weight:500;color:var(--gray-400);text-align:center;padding:6px 0;text-transform:uppercase;letter-spacing:0.4px;}
+  .cal-day{width:32px;height:32px;margin:auto;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;color:var(--gray-700);transition:all 0.15s;position:relative;}
+  .cal-day:hover{background:var(--blue-50);color:var(--blue-600);}
+  .cal-day.today{background:var(--blue-600);color:white;font-weight:600;}
+  .cal-day.has-appt::after{content:'';width:4px;height:4px;background:var(--blue-400);border-radius:50%;position:absolute;bottom:3px;}
+  .cal-day.today.has-appt::after{background:var(--blue-200);}
+  .cal-day.other-month{color:var(--gray-300);}
+  .cal-day.selected{background:var(--blue-50);color:var(--blue-600);font-weight:600;border:1.5px solid var(--blue-200);}
+
+  /* FULL CALENDAR MODULE — tamaño reducido a ~80% para una vista más cómoda */
+  .cal-container{max-width:80%;margin:0 auto;}
+  @media(max-width:1100px){ .cal-container{max-width:100%;} }
+  .cal-full{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-200);overflow:hidden;}
+  .cal-full-grid{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid var(--gray-200);}
+  .cal-full-day-name{font-size:9px;font-weight:500;color:var(--gray-400);text-align:center;padding:8px 0;text-transform:uppercase;letter-spacing:0.4px;border-bottom:1px solid var(--gray-100);}
+  .cal-full-cell{min-height:72px;border-bottom:1px solid var(--gray-100);border-right:1px solid var(--gray-100);padding:5px;cursor:pointer;transition:background 0.1s;}
+  .cal-full-cell:hover{background:var(--gray-50);}
+  .cal-full-cell:nth-child(7n){border-right:none;}
+  .cal-full-num{font-size:11px;font-weight:500;color:var(--gray-700);width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:3px;}
+  .cal-full-num.today{background:var(--blue-600);color:white;font-weight:600;}
+  .cal-full-num.other{color:var(--gray-300);}
+  .cal-event{background:var(--blue-50);color:var(--blue-800);border-radius:4px;padding:2px 4px;font-size:9px;font-weight:500;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .cal-event.green{background:#EAF3DE;color:#3B6D11;}
+  .cal-event.amber{background:#FAEEDA;color:#854F0B;}
+  .cal-event.canc{background:var(--gray-100);color:var(--gray-400);text-decoration:line-through;opacity:0.7;}
+
+  /* SELECTOR DE VISTA: Mes / Semana / Día */
+  .cal-view-switch{display:flex;background:var(--gray-100);border-radius:var(--radius-sm);padding:2px;gap:2px;}
+  .cal-view-btn{font-size:11px;font-weight:500;color:var(--gray-600);padding:5px 10px;border-radius:6px;cursor:pointer;transition:all 0.12s;user-select:none;}
+  .cal-view-btn:hover{color:var(--blue-600);}
+  .cal-view-btn.active{background:var(--white);color:var(--blue-600);box-shadow:0 1px 2px rgba(0,0,0,0.06);}
+  .cal-today-btn{width:auto;padding:0 10px;font-size:11px;font-weight:500;}
+
+  /* VISTA SEMANAL */
+  .cal-week-grid{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid var(--gray-200);}
+  .cal-week-col{border-right:1px solid var(--gray-100);padding:8px 6px;min-height:220px;}
+  .cal-week-col:last-child{border-right:none;}
+  .cal-week-col-header{text-align:center;margin-bottom:6px;cursor:pointer;}
+  .cal-week-day-name{font-size:9px;font-weight:500;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.4px;}
+  .cal-week-day-num{width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:2px auto 0;font-size:11px;font-weight:500;color:var(--gray-700);}
+  .cal-week-day-num.today{background:var(--blue-600);color:white;font-weight:600;}
+  .cal-week-appt{background:var(--blue-50);color:var(--blue-800);border-radius:5px;padding:4px 6px;font-size:10px;font-weight:500;margin-bottom:4px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .cal-week-appt.green{background:#EAF3DE;color:#3B6D11;}
+  .cal-week-appt.amber{background:#FAEEDA;color:#854F0B;}
+  .cal-week-appt.canc{background:var(--gray-100);color:var(--gray-400);text-decoration:line-through;opacity:0.7;}
+  .cal-week-empty{font-size:10px;color:var(--gray-300);text-align:center;padding-top:10px;}
+
+  /* VISTA DIARIA */
+  .cal-day-view{padding:18px 22px 22px;}
+  .cal-day-view-header{font-size:14px;font-weight:600;color:var(--gray-900);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+  .cal-today-tag{font-size:10px;font-weight:600;color:var(--blue-600);background:var(--blue-50);padding:2px 8px;border-radius:20px;}
+
+  /* TIME SLOTS */
+  .slots-section{padding:0 20px 20px;}
+  .slots-label{font-size:11px;font-weight:500;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;}
+  .slot-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .slot{border:1px solid var(--gray-200);border-radius:var(--radius-sm);padding:7px 10px;font-size:12px;font-weight:500;color:var(--gray-700);cursor:pointer;text-align:center;transition:all 0.15s;}
+  .slot:hover{border-color:var(--blue-200);color:var(--blue-600);background:var(--blue-50);}
+  .slot.taken{background:var(--gray-50);color:var(--gray-300);cursor:not-allowed;text-decoration:line-through;}
+  .slot.selected{background:var(--blue-600);color:white;border-color:var(--blue-600);}
+
+  /* APPOINTMENTS LIST */
+  .appt-list{display:flex;flex-direction:column;gap:0;}
+  .appt-item{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--gray-100);cursor:pointer;transition:background 0.12s;}
+  .appt-item:last-child{border-bottom:none;}
+  .appt-item:hover{background:var(--gray-50);}
+  .appt-time-col{min-width:52px;}
+  .appt-time{font-size:13px;font-weight:600;color:var(--gray-900);font-variant-numeric:tabular-nums;}
+  .appt-ampm{font-size:10px;color:var(--gray-400);font-weight:500;}
+  .appt-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;}
+  .appt-info{flex:1;min-width:0;}
+  .appt-name{font-size:13px;font-weight:600;color:var(--gray-900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .appt-type{font-size:11px;color:var(--gray-400);margin-top:2px;}
+  .appt-badge{border-radius:20px;padding:3px 9px;font-size:11px;font-weight:500;flex-shrink:0;}
+  .badge-conf{background:#EAF3DE;color:#3B6D11;}
+  .badge-pend{background:#FAEEDA;color:#854F0B;}
+  .badge-tele{background:var(--blue-50);color:var(--blue-800);}
+  .badge-canc{background:#FCEBEB;color:#A32D2D;}
+
+  /* NOTIFICATIONS PANEL */
+  .notif-list{display:flex;flex-direction:column;}
+  .notif-item{display:flex;gap:12px;padding:14px 20px;border-bottom:1px solid var(--gray-100);}
+  .notif-item:last-child{border-bottom:none;}
+  .notif-icon{width:34px;height:34px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .notif-icon svg{width:16px;height:16px;}
+  .ni-blue{background:var(--blue-50);color:var(--blue-600);}
+  .ni-green{background:#EAF3DE;color:#3B6D11;}
+  .ni-amber{background:#FAEEDA;color:#854F0B;}
+  .ni-red{background:#FCEBEB;color:#A32D2D;}
+  .notif-body{flex:1;}
+  .notif-text{font-size:12px;color:var(--gray-700);line-height:1.5;}
+  .notif-text strong{color:var(--gray-900);font-weight:600;}
+  .notif-time{font-size:11px;color:var(--gray-400);margin-top:3px;}
+  .notif-dot{width:6px;height:6px;border-radius:50%;background:var(--blue-400);margin-top:5px;flex-shrink:0;}
+
+  /* PATIENTS MODULE */
+  .search-filter-bar{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+  .search-box{display:flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:8px 14px;flex:1;}
+  .search-box svg{width:15px;height:15px;color:var(--gray-400);flex-shrink:0;}
+  .search-box input{border:none;background:transparent;font-size:13px;color:var(--gray-700);outline:none;font-family:var(--font);width:100%;}
+  .search-box input::placeholder{color:var(--gray-400);}
+  .filter-chip{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:8px 14px;font-size:12px;font-weight:500;color:var(--gray-600);cursor:pointer;transition:all 0.15s;}
+  .filter-chip:hover,.filter-chip.active{border-color:var(--blue-200);color:var(--blue-600);background:var(--blue-50);}
+  .patients-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+  .patient-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-200);padding:18px;cursor:pointer;transition:all 0.15s;}
+  .patient-card:hover{border-color:var(--blue-200);box-shadow:0 2px 12px rgba(24,95,165,0.08);}
+  .patient-card-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .patient-avatar-lg{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0;}
+  .patient-card-name{font-size:14px;font-weight:600;color:var(--gray-900);}
+  .patient-card-id{font-size:11px;color:var(--gray-400);margin-top:2px;}
+  .patient-card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
+  .tag{background:var(--gray-100);color:var(--gray-600);border-radius:20px;padding:3px 9px;font-size:10px;font-weight:500;}
+  .tag-blue{background:var(--blue-50);color:var(--blue-800);}
+  .patient-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--gray-100);}
+  .patient-card-meta{font-size:11px;color:var(--gray-400);}
+
+  /* VIDEO MODULE */
+  .video-grid{display:grid;grid-template-columns:1fr 300px;gap:20px;}
+  .video-main{background:var(--gray-900);border-radius:var(--radius-lg);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+  .video-placeholder{text-align:center;color:var(--gray-400);}
+  .video-placeholder svg{width:48px;height:48px;margin-bottom:12px;opacity:0.4;}
+  .video-placeholder p{font-size:14px;}
+  .video-controls{position:absolute;bottom:0;left:0;right:0;padding:16px 20px;background:linear-gradient(transparent,rgba(0,0,0,0.7));display:flex;align-items:center;justify-content:center;gap:12px;}
+  .vc-btn{width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
+  .vc-btn svg{width:18px;height:18px;}
+  .vc-normal{background:rgba(255,255,255,0.2);color:white;}
+  .vc-normal:hover{background:rgba(255,255,255,0.35);}
+  .vc-danger{background:#E24B4A;color:white;}
+  .vc-danger:hover{background:#c73e3d;}
+  .video-pip{position:absolute;bottom:72px;right:16px;width:120px;height:80px;background:var(--blue-800);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--blue-200);border:2px solid rgba(255,255,255,0.2);}
+  .video-sidebar{display:flex;flex-direction:column;gap:14px;}
+  .queue-item{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-200);padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all 0.15s;}
+  .queue-item:hover{border-color:var(--blue-200);}
+  .queue-item.current{border-color:var(--blue-400);background:var(--blue-50);}
+  .queue-info{flex:1;}
+  .queue-name{font-size:13px;font-weight:600;color:var(--gray-900);}
+  .queue-reason{font-size:11px;color:var(--gray-400);margin-top:2px;}
+  .queue-time{font-size:12px;font-weight:600;color:var(--blue-600);}
+  .queue-status{font-size:10px;font-weight:600;color:#3B6D11;background:#EAF3DE;border-radius:20px;padding:2px 8px;}
+  .queue-status.wait{color:#854F0B;background:#FAEEDA;}
+
+  /* EXPEDIENTES MODULE */
+  .exp-table{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-200);overflow:hidden;}
+  .exp-table table{width:100%;border-collapse:collapse;}
+  .exp-table th{font-size:11px;font-weight:500;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.6px;padding:12px 18px;text-align:left;border-bottom:1px solid var(--gray-200);background:var(--gray-50);}
+  .exp-table td{padding:13px 18px;font-size:13px;color:var(--gray-700);border-bottom:1px solid var(--gray-100);vertical-align:middle;}
+  .exp-table tr:last-child td{border-bottom:none;}
+  .exp-table tr:hover td{background:var(--gray-50);}
+  .exp-table tr{cursor:pointer;}
+  .exp-name{font-weight:600;color:var(--gray-900);}
+  .exp-id{font-size:11px;color:var(--gray-400);margin-top:1px;font-family:'DM Mono',monospace;}
+
+  /* CONFIG MODULE */
+  .config-grid{display:grid;grid-template-columns:220px 1fr;gap:24px;}
+  .config-nav{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-200);padding:8px;display:flex;flex-direction:column;gap:2px;align-self:start;}
+  .config-nav-item{padding:10px 14px;border-radius:var(--radius-md);font-size:13px;font-weight:500;color:var(--gray-600);cursor:pointer;transition:all 0.15s;}
+  .config-nav-item:hover,.config-nav-item.active{background:var(--blue-50);color:var(--blue-600);}
+  .config-panel{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-200);padding:24px;}
+  .config-section-title{font-size:15px;font-weight:600;color:var(--gray-900);margin-bottom:4px;}
+  .config-section-desc{font-size:12px;color:var(--gray-400);margin-bottom:22px;}
+  .config-field{margin-bottom:18px;}
+  .config-label{font-size:12px;font-weight:500;color:var(--gray-600);margin-bottom:6px;display:block;}
+  .config-input{width:100%;border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:9px 12px;font-size:13px;color:var(--gray-900);font-family:var(--font);outline:none;transition:border 0.15s;}
+  .config-input:focus{border-color:var(--blue-400);}
+  .config-toggle{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--gray-100);}
+  .config-toggle:last-child{border-bottom:none;}
+  .toggle-info .toggle-label{font-size:13px;font-weight:500;color:var(--gray-900);}
+  .toggle-info .toggle-desc{font-size:11px;color:var(--gray-400);margin-top:2px;}
+  .toggle-switch{width:40px;height:22px;border-radius:11px;background:var(--gray-200);position:relative;cursor:pointer;transition:background 0.2s;flex-shrink:0;}
+  .toggle-switch.on{background:var(--blue-600);}
+  .toggle-switch::after{content:'';width:18px;height:18px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2);}
+  .toggle-switch.on::after{left:20px;}
+
+  /* DAY SELECTOR (Horario de atención) */
+  .days-row{display:flex;gap:8px;flex-wrap:wrap;}
+  .day-chip{position:relative;width:52px;border-radius:var(--radius-md);border:1px solid var(--gray-200);background:var(--white);cursor:pointer;transition:all 0.15s;text-align:center;padding:8px 4px 7px;}
+  .day-chip .day-abbr{display:block;font-size:12px;font-weight:600;color:var(--gray-600);}
+  .day-chip .day-hours{display:block;font-size:9px;color:var(--gray-400);margin-top:3px;font-family:'DM Mono',monospace;}
+  .day-chip.active{background:var(--blue-50);border-color:var(--blue-200);}
+  .day-chip.active .day-abbr{color:var(--blue-600);}
+  .day-chip.active .day-hours{color:var(--blue-600);}
+  .day-chip.off{background:var(--gray-50);}
+  .day-chip.off .day-abbr{color:var(--gray-300);text-decoration:line-through;}
+  .day-chip.off .day-hours{color:var(--gray-300);}
+  .day-chip .day-edit-btn{position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;background:var(--white);border:1px solid var(--gray-200);color:var(--gray-400);font-size:9px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.15s;}
+  .day-chip:hover .day-edit-btn{opacity:1;}
+  .day-chip.active .day-edit-btn:hover{border-color:var(--blue-200);color:var(--blue-600);}
+  .day-hours-editor{display:none;margin-top:10px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:14px 16px;}
+  .day-hours-editor.open{display:block;}
+  .day-hours-editor-title{font-size:12px;font-weight:600;color:var(--gray-900);margin-bottom:10px;}
+  .day-hours-editor-row{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;}
+  .day-hours-editor-row .config-field{margin-bottom:0;flex:1;min-width:120px;}
+  .day-hours-editor-actions{display:flex;gap:8px;margin-top:12px;}
+
+  /* COMMON */
+  .tele-chip{display:inline-flex;align-items:center;gap:5px;background:var(--blue-50);color:var(--blue-800);border:1px solid var(--blue-100);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:500;}
+  .tele-dot{width:6px;height:6px;border-radius:50%;background:var(--blue-400);}
+  .section-sep{font-size:11px;font-weight:500;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.6px;padding:14px 20px 8px;}
+  .right-col{display:flex;flex-direction:column;gap:20px;}
+  .module-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+  .module-title{font-size:18px;font-weight:600;color:var(--gray-900);letter-spacing:-0.4px;}
+  .module-desc{font-size:13px;color:var(--gray-400);margin-top:3px;}
+
+  /* MODAL */
+  .modal-overlay{position:fixed;inset:0;background:rgba(10,20,40,0.35);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+  .modal-overlay.open{opacity:1;pointer-events:all;}
+  .modal{background:var(--white);border-radius:var(--radius-xl);width:480px;max-width:calc(100vw - 40px);max-height:calc(100vh - 40px);overflow-y:auto;padding:28px;box-shadow:0 8px 40px rgba(0,0,0,0.12);transform:translateY(8px);transition:transform 0.2s;}
+  .modal-overlay.open .modal{transform:translateY(0);}
+  .modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+  .modal-title{font-size:17px;font-weight:600;color:var(--gray-900);letter-spacing:-0.3px;}
+  .modal-close{width:30px;height:30px;border-radius:50%;background:var(--gray-100);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gray-600);font-size:16px;font-family:var(--font);}
+  .modal-close:hover{background:var(--gray-200);}
+  .form-row{margin-bottom:16px;}
+  .form-label{font-size:12px;font-weight:500;color:var(--gray-600);margin-bottom:6px;display:block;}
+  .form-input{width:100%;border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:9px 12px;font-size:13px;color:var(--gray-900);font-family:var(--font);outline:none;transition:border 0.15s;}
+  .form-input:focus{border-color:var(--blue-400);}
+  .form-select{width:100%;border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:9px 12px;font-size:13px;color:var(--gray-900);font-family:var(--font);outline:none;background:white;cursor:pointer;}
+  .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+  .form-check-group{display:flex;flex-direction:column;gap:8px;}
+  .form-check{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-700);cursor:pointer;}
+  .form-check input{accent-color:var(--blue-600);}
+  .modal-footer{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--gray-100);}
+
+  /* SEARCH BAR (topbar) */
+  .search-bar{display:flex;align-items:center;gap:8px;background:var(--gray-100);border-radius:var(--radius-md);padding:7px 12px;cursor:text;}
+  .search-bar svg{width:15px;height:15px;color:var(--gray-400);}
+  .search-input{border:none;background:transparent;font-size:13px;color:var(--gray-700);outline:none;font-family:var(--font);width:160px;}
+  .search-input::placeholder{color:var(--gray-400);}
+
+  /* TOAST */
+  .toast-container{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:8px;z-index:300;}
+  .toast{background:var(--gray-900);color:white;padding:12px 16px;border-radius:var(--radius-md);font-size:13px;display:flex;align-items:center;gap:10px;min-width:240px;transform:translateY(8px);opacity:0;transition:all 0.25s;}
+  .toast.show{transform:translateY(0);opacity:1;}
+  .toast.success{border-left:3px solid #63C132;}
+  .toast.info{border-left:3px solid var(--blue-400);}
+  .toast.warning{border-left:3px solid #EF9F27;}
+
+  /* PATIENT DRAWER */
+  .drawer-overlay{position:fixed;inset:0;background:rgba(10,20,40,0.25);z-index:150;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+  .drawer-overlay.open{opacity:1;pointer-events:all;}
+  .drawer{position:fixed;top:0;right:0;width:360px;max-width:100vw;height:100vh;background:var(--white);border-left:1px solid var(--gray-200);z-index:151;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 0.25s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,0.08);}
+  .drawer-overlay.open .drawer{transform:translateX(0);}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--gray-100);}
+  .drawer-close{width:30px;height:30px;border-radius:50%;background:var(--gray-100);border:none;cursor:pointer;font-size:16px;color:var(--gray-600);display:flex;align-items:center;justify-content:center;}
+  .drawer-close:hover{background:var(--gray-200);}
+  .drawer-body{flex:1;overflow-y:auto;padding:20px;}
+  .drawer-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;margin-bottom:14px;}
+  .drawer-name{font-size:17px;font-weight:600;color:var(--gray-900);letter-spacing:-0.3px;}
+  .drawer-id{font-size:12px;color:var(--gray-400);margin-top:2px;font-family:'DM Mono',monospace;}
+  .drawer-section{margin-top:20px;}
+  .drawer-section-title{font-size:10px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px;}
+  .drawer-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--gray-100);font-size:13px;}
+  .drawer-row:last-child{border-bottom:none;}
+  .drawer-row-label{color:var(--gray-400);}
+  .drawer-row-value{color:var(--gray-900);font-weight:500;text-align:right;}
+  .drawer-history{display:flex;flex-direction:column;gap:8px;}
+  .drawer-hist-item{background:var(--gray-50);border-radius:var(--radius-md);padding:10px 12px;font-size:12px;color:var(--gray-700);}
+  .drawer-hist-date{font-size:10px;color:var(--gray-400);margin-top:3px;}
+  .drawer-actions{padding:16px 20px;border-top:1px solid var(--gray-100);display:flex;flex-direction:column;gap:8px;}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .dash-grid{grid-template-columns:1fr;}
+    .stats-row{grid-template-columns:repeat(2,1fr);}
+    .right-col{display:contents;}
+    .video-grid{grid-template-columns:1fr;}
+    .config-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    .sidebar{width:56px;}.main{margin-left:56px;}
+    .sidebar-logo{width:32px;height:32px;}
+    .module{padding:16px;}
+    .stats-row{grid-template-columns:1fr 1fr;gap:10px;}
+    .topbar{padding:0 16px;}
+    .topbar-title{font-size:14px;}
+    .stat-value{font-size:22px;}
+    .patients-grid{grid-template-columns:1fr;}
+    .modal{padding:20px;}
+  }
+  @media(max-width:400px){
+    .stats-row{grid-template-columns:1fr;}
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@daily-co/daily-js@0.92.2/dist/daily-iframe.js"></script>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <img src="data:image/png;base64,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" alt="Agenda Médica" />
+    </div>
+    <div class="nav-item active" title="Inicio" onclick="showModule('inicio')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </div>
+    <div class="nav-item" title="Calendario" onclick="showModule('calendario')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    </div>
+    <div class="nav-item" title="Pacientes" onclick="showModule('pacientes')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    </div>
+    <div class="nav-item" title="Videollamadas" onclick="showModule('video')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+    </div>
+    <div class="nav-item" title="Notificaciones" onclick="showModule('notificaciones')" style="position:relative;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span class="nav-badge"></span>
+    </div>
+    <div class="nav-item" title="Expedientes" onclick="showModule('expedientes')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="nav-item" title="Configuración" onclick="showModule('config')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </div>
+      <div class="avatar-sm" title="Dr. Ruiz" onclick="showModule('config')">DR</div>
+    </div>
+  </nav>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-title" id="topbarTitle">Agenda Médica</span>
+        <span class="topbar-sub" id="topbarSub">martes, 14 de abril de 2026</span>
+      </div>
+      <div class="topbar-right">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="search-input" placeholder="Buscar paciente o cita..." />
+        </div>
+        <button class="btn-ghost" id="topbarNewApptBtn" onclick="openModal()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Nueva cita
+        </button>
+        <button class="btn-primary" id="topbarCallBtn" onclick="startCall()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          Iniciar llamada
+        </button>
+      </div>
+    </header>
+
+    <!-- ==================== MÓDULO: INICIO / DASHBOARD ==================== -->
+    <div class="module active" id="mod-inicio">
+      <div class="dash-grid">
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-label"><span class="stat-dot dot-blue"></span> Citas hoy</div>
+            <div class="stat-value" id="statCitasHoy">0</div>
+            <div class="stat-change" id="statCitasHoyChange">&nbsp;</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span class="stat-dot dot-green"></span> Confirmadas</div>
+            <div class="stat-value" id="statConfirmadas">0</div>
+            <div class="stat-change" id="statConfirmadasChange">&nbsp;</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span class="stat-dot dot-amber"></span> Pendientes</div>
+            <div class="stat-value" id="statPendientes">0</div>
+            <div class="stat-change">Requieren confirmación</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><span class="stat-dot dot-red"></span> Canceladas</div>
+            <div class="stat-value" id="statCanceladas">0</div>
+            <div class="stat-change">Esta semana</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Citas del día</span>
+              <span class="tele-chip"><span class="tele-dot"></span>Teleconsulta activa</span>
+            </div>
+            <div id="apptListHoyWrap">
+              <div class="section-sep" style="padding-top:20px;color:var(--gray-300);">Sin citas registradas para hoy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="panel">
+            <div class="cal-nav">
+              <span class="cal-month" id="calMiniMonth">Abril 2026</span>
+              <div class="cal-arrows">
+                <button class="cal-arrow" onclick="changeMonth(-1)">‹</button>
+                <button class="cal-arrow" onclick="changeMonth(1)">›</button>
+              </div>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+            <div class="slots-section">
+              <div class="slots-label">Horarios disponibles — <span id="selDateLabel">hoy</span></div>
+              <div class="slot-grid" id="slotGrid"></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Notificaciones</span>
+              <span class="panel-action" onclick="markAllRead()">Marcar todo leído</span>
+            </div>
+            <div class="notif-list">
+              <div class="notif-item">
+                <div class="notif-dot"></div>
+                <div class="notif-icon ni-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <div class="notif-body"><div class="notif-text"><strong>María Torres</strong> confirmó su cita de las 09:00</div><div class="notif-time">Hace 8 min</div></div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-dot"></div>
+                <div class="notif-icon ni-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+                <div class="notif-body"><div class="notif-text"><strong>Ana Jiménez</strong> no ha confirmado su cita de las 11:15</div><div class="notif-time">Hace 22 min</div></div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-icon ni-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                <div class="notif-body"><div class="notif-text">Recordatorio enviado a <strong>Carlos Rodríguez</strong> vía SMS y email</div><div class="notif-time">Hace 1 hora</div></div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-icon ni-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
+                <div class="notif-body"><div class="notif-text"><strong>Pedro Alvarado</strong> canceló su cita del miércoles 16/04</div><div class="notif-time">Hace 2 horas</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== MÓDULO: CALENDARIO ==================== -->
+    <div class="module" id="mod-calendario">
+      <div class="module-header">
+        <div>
+          <div class="module-title" id="calModuleTitle">Calendario mensual</div>
+          <div class="module-desc">Vista completa de citas programadas</div>
+        </div>
+        <button class="btn-primary" onclick="openModal()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Nueva cita
+        </button>
+      </div>
+      <div class="cal-container">
+        <div class="panel" style="margin-bottom:0;">
+          <div class="cal-nav" style="padding:16px 22px 12px;flex-wrap:wrap;gap:10px;">
+            <span class="cal-month" id="calFullMonth">Abril 2026</span>
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+              <div class="cal-view-switch" id="calViewSwitch">
+                <span class="cal-view-btn active" data-view="month" onclick="setCalView('month')">Mes</span>
+                <span class="cal-view-btn" data-view="week" onclick="setCalView('week')">Semana</span>
+                <span class="cal-view-btn" data-view="day" onclick="setCalView('day')">Día</span>
+              </div>
+              <div class="cal-arrows">
+                <button class="cal-arrow" onclick="changeFullPeriod(-1)">‹</button>
+                <button class="cal-arrow cal-today-btn" onclick="goToday()">Hoy</button>
+                <button class="cal-arrow" onclick="changeFullPeriod(1)">›</button>
+              </div>
+            </div>
+          </div>
+          <div class="cal-full-grid" id="calFullGrid">
+            <div class="cal-full-day-name">Dom</div><div class="cal-full-day-name">Lun</div>
+            <div class="cal-full-day-name">Mar</div><div class="cal-full-day-name">Mié</div>
+            <div class="cal-full-day-name">Jue</div><div class="cal-full-day-name">Vie</div>
+            <div class="cal-full-day-name">Sáb</div>
+          </div>
+          <div class="cal-week-grid" id="calWeekGrid" style="display:none;"></div>
+          <div class="cal-day-view" id="calDayGrid" style="display:none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== MÓDULO: PACIENTES ==================== -->
+    <div class="module" id="mod-pacientes">
+      <div class="module-header">
+        <div>
+          <div class="module-title">Pacientes</div>
+          <div class="module-desc" id="pacientesCount">0 pacientes registrados</div>
+        </div>
+        <button class="btn-primary" onclick="abrirModalNuevoPaciente()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Nuevo paciente
+        </button>
+      </div>
+      <div class="search-filter-bar">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="pacientesSearchInput" placeholder="Buscar por nombre, ID o diagnóstico..." oninput="renderPatientsGrid()" />
+        </div>
+        <div class="filter-chip active" data-filter="todos" onclick="filterPatients(this,'todos')">Todos</div>
+        <div class="filter-chip" data-filter="activos" onclick="filterPatients(this,'activos')">Activos</div>
+        <div class="filter-chip" data-filter="crónicos" onclick="filterPatients(this,'crónicos')">Crónicos</div>
+        <button class="btn-ghost" onclick="limpiarFiltrosPacientes()">Limpiar</button>
+      </div>
+      <div class="patients-grid" id="patientsGrid"></div>
+    </div>
+
+    <!-- ==================== MÓDULO: VIDEOLLAMADAS ==================== -->
+    <div class="module" id="mod-video">
+      <div class="module-header">
+        <div>
+          <div class="module-title">Teleconsultas</div>
+          <div class="module-desc">Sala de videollamadas médicas</div>
+        </div>
+        <button class="btn-primary" onclick="startCall()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          Iniciar llamada
+        </button>
+      </div>
+      <div class="video-grid">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="video-main">
+            <div class="video-placeholder" id="videoPlaceholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <p id="videoPlaceholderText">Sala de espera</p>
+              <p style="font-size:11px;margin-top:6px;opacity:0.6;" id="videoPlaceholderSub">Selecciona un paciente para iniciar</p>
+            </div>
+            <div id="dailyFrameContainer" style="display:none;position:absolute;inset:0;"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-header"><span class="panel-title">Notas de consulta</span><span style="display:flex;gap:14px;"><span class="panel-action" style="color:var(--gray-400);" onclick="limpiarNotasConsulta()">Limpiar</span><span class="panel-action" onclick="toast('Notas guardadas','success')">Guardar</span></span></div>
+            <div style="padding:16px 20px;">
+              <textarea id="notasConsultaTextarea" style="width:100%;border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:10px 12px;font-size:13px;font-family:var(--font);color:var(--gray-800);outline:none;resize:vertical;min-height:90px;" placeholder="Anamnesis, diagnóstico, indicaciones..."></textarea>
+            </div>
+          </div>
+
+          <div class="panel" id="soapPanel">
+            <div class="panel-header">
+              <span class="panel-title">Transcripción y Nota SOAP (IA)</span>
+              <span class="panel-action" id="soapToggleTranscripcion" onclick="toggleTranscripcion()">Iniciar transcripción</span>
+            </div>
+            <div style="padding:14px 20px;">
+              <div id="soapEstado" style="font-size:11px;color:var(--gray-400);margin-bottom:8px;">Transcripción inactiva — no se guarda audio ni video, solo texto.</div>
+              <div id="soapTranscripcionBox" style="max-height:110px;overflow-y:auto;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:10px 12px;font-size:12px;color:var(--gray-700);line-height:1.5;margin-bottom:10px;white-space:pre-wrap;">La transcripción de la conversación aparecerá aquí en vivo…</div>
+              <button class="btn-ghost" id="soapGenerarBtn" onclick="generarNotaSOAP()" disabled>Generar nota SOAP con IA</button>
+
+              <div id="soapCamposWrap" style="display:none;margin-top:16px;">
+                <div class="form-row">
+                  <label class="form-label">S — Subjetivo</label>
+                  <textarea class="form-input" id="soapSubjetivo" rows="3" style="resize:vertical;"></textarea>
+                </div>
+                <div class="form-row">
+                  <label class="form-label">O — Objetivo</label>
+                  <textarea class="form-input" id="soapObjetivo" rows="3" style="resize:vertical;"></textarea>
+                </div>
+                <div class="form-row">
+                  <label class="form-label">A — Análisis</label>
+                  <textarea class="form-input" id="soapAnalisis" rows="3" style="resize:vertical;"></textarea>
+                </div>
+                <div class="form-row">
+                  <label class="form-label">P — Plan</label>
+                  <textarea class="form-input" id="soapPlan" rows="3" style="resize:vertical;"></textarea>
+                </div>
+                <div style="display:flex;gap:10px;">
+                  <button class="btn-primary" onclick="guardarNotaSOAP()">Guardar como nota de la atención</button>
+                  <button class="btn-ghost" onclick="descartarNotaSOAP()">Descartar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-sidebar">
+          <div class="panel">
+            <div class="panel-header"><span class="panel-title">Cola de pacientes</span><span class="appt-badge badge-conf" style="font-size:10px;">3 en espera</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px;">
+              <div class="queue-item current" onclick="openPatient('MT')">
+                <div class="appt-avatar" style="background:#B5D4F4;color:#0C447C;width:36px;height:36px;">MT</div>
+                <div class="queue-info"><div class="queue-name">María Torres</div><div class="queue-reason">Consulta general</div></div>
+                <div style="text-align:right;"><div class="queue-time">09:00</div><div class="queue-status">En sala</div></div>
+              </div>
+              <div class="queue-item" onclick="openPatient('CR')">
+                <div class="appt-avatar" style="background:#C0DD97;color:#27500A;width:36px;height:36px;">CR</div>
+                <div class="queue-info"><div class="queue-name">Carlos Rodríguez</div><div class="queue-reason">Control HTA</div></div>
+                <div style="text-align:right;"><div class="queue-time">10:30</div><div class="queue-status wait">Esperando</div></div>
+              </div>
+              <div class="queue-item" onclick="openPatient('AJ')">
+                <div class="appt-avatar" style="background:#FAC775;color:#633806;width:36px;height:36px;">AJ</div>
+                <div class="queue-info"><div class="queue-name">Ana Jiménez</div><div class="queue-reason">Seguimiento DM2</div></div>
+                <div style="text-align:right;"><div class="queue-time">11:15</div><div class="queue-status wait">Esperando</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== MÓDULO: NOTIFICACIONES ==================== -->
+    <div class="module" id="mod-notificaciones">
+      <div class="module-header">
+        <div>
+          <div class="module-title">Notificaciones</div>
+          <div class="module-desc">4 sin leer</div>
+        </div>
+        <button class="btn-ghost" onclick="markAllRead()">Marcar todo leído</button>
+      </div>
+      <div class="panel">
+        <div class="notif-list">
+          <div class="notif-item" id="notif1">
+            <div class="notif-dot"></div>
+            <div class="notif-icon ni-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="notif-body"><div class="notif-text"><strong>María Torres</strong> confirmó su cita de las 09:00</div><div class="notif-time">Hace 8 min</div></div>
+          </div>
+          <div class="notif-item" id="notif2">
+            <div class="notif-dot"></div>
+            <div class="notif-icon ni-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <div class="notif-body"><div class="notif-text"><strong>Ana Jiménez</strong> no ha confirmado su cita de las 11:15</div><div class="notif-time">Hace 22 min</div></div>
+          </div>
+          <div class="notif-item" id="notif3">
+            <div class="notif-dot"></div>
+            <div class="notif-icon ni-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="notif-body"><div class="notif-text">Recordatorio enviado a <strong>Carlos Rodríguez</strong> vía SMS y email</div><div class="notif-time">Hace 1 hora</div></div>
+          </div>
+          <div class="notif-item" id="notif4">
+            <div class="notif-dot"></div>
+            <div class="notif-icon ni-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
+            <div class="notif-body"><div class="notif-text"><strong>Pedro Alvarado</strong> canceló su cita del miércoles 16/04</div><div class="notif-time">Hace 2 horas</div></div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-icon ni-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="notif-body"><div class="notif-text"><strong>Luis Mendoza</strong> completó el formulario de pre-consulta</div><div class="notif-time">Hace 3 horas</div></div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-icon ni-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <div class="notif-body"><div class="notif-text">Nueva solicitud de cita desde <strong>Wix Bookings</strong> — paciente: Gabriela Méndez</div><div class="notif-time">Hace 5 horas</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== MÓDULO: EXPEDIENTES ==================== -->
+    <div class="module" id="mod-expedientes">
+      <div class="module-header">
+        <div>
+          <div class="module-title">Expedientes médicos</div>
+          <div class="module-desc">Historial clínico digital</div>
+        </div>
+        <button class="btn-primary" onclick="toast('Nuevo expediente en desarrollo','info')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Nuevo expediente
+        </button>
+      </div>
+      <div class="search-filter-bar" style="margin-bottom:16px;">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="expedientesSearchInput" placeholder="Buscar por nombre, ID o diagnóstico..." />
+        </div>
+        <button class="btn-ghost" onclick="document.getElementById('expedientesSearchInput').value='';toast('Búsqueda limpiada','info');">Limpiar</button>
+      </div>
+      <div class="exp-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Paciente</th>
+              <th>ID Expediente</th>
+              <th>Diagnóstico</th>
+              <th>Última visita</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="openPatient('MT')">
+              <td><div class="exp-name">María Torres</div></td>
+              <td><div class="exp-id">EXP-0021</div></td>
+              <td>Hipertensión arterial</td>
+              <td>14/04/2026</td>
+              <td><span class="appt-badge badge-conf">Activo</span></td>
+            </tr>
+            <tr onclick="openPatient('CR')">
+              <td><div class="exp-name">Carlos Rodríguez</div></td>
+              <td><div class="exp-id">EXP-0034</div></td>
+              <td>HTA + Diabetes T2</td>
+              <td>10/04/2026</td>
+              <td><span class="appt-badge badge-conf">Activo</span></td>
+            </tr>
+            <tr onclick="openPatient('AJ')">
+              <td><div class="exp-name">Ana Jiménez</div></td>
+              <td><div class="exp-id">EXP-0058</div></td>
+              <td>Diabetes Mellitus T2</td>
+              <td>07/04/2026</td>
+              <td><span class="appt-badge badge-pend">Pendiente</span></td>
+            </tr>
+            <tr onclick="openPatient('LM')">
+              <td><div class="exp-name">Luis Mendoza</div></td>
+              <td><div class="exp-id">EXP-0071</div></td>
+              <td>Primera consulta</td>
+              <td>—</td>
+              <td><span class="appt-badge badge-tele">Nuevo</span></td>
+            </tr>
+            <tr onclick="openPatient('SV')">
+              <td><div class="exp-name">Sofía Vargas</div></td>
+              <td><div class="exp-id">EXP-0089</div></td>
+              <td>Seguimiento post-tratamiento</td>
+              <td>01/04/2026</td>
+              <td><span class="appt-badge badge-conf">Activo</span></td>
+            </tr>
+            <tr onclick="openPatient('RP')">
+              <td><div class="exp-name">Roberto Pérez</div></td>
+              <td><div class="exp-id">EXP-0102</div></td>
+              <td>Control post-operatorio</td>
+              <td>03/04/2026</td>
+              <td><span class="appt-badge badge-pend">Pendiente</span></td>
+            </tr>
+            <tr onclick="openPatient('PA')">
+              <td><div class="exp-name">Pedro Alvarado</div></td>
+              <td><div class="exp-id">EXP-0115</div></td>
+              <td>Gastritis crónica</td>
+              <td>28/03/2026</td>
+              <td><span class="appt-badge badge-canc">Canceló</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==================== MÓDULO: CONFIGURACIÓN ==================== -->
+    <div class="module" id="mod-config">
+      <div class="module-header">
+        <div>
+          <div class="module-title">Configuración</div>
+          <div class="module-desc">Preferencias del sistema</div>
+        </div>
+        <button class="btn-primary" id="configGuardarCambiosBtn" onclick="toast('Configuración guardada','success')">Guardar cambios</button>
+      </div>
+      <div class="config-grid">
+        <div class="config-nav">
+          <div class="config-nav-item active" onclick="selectConfigTab(this,'tab-perfil')">Perfil médico</div>
+          <div class="config-nav-item" onclick="selectConfigTab(this,'tab-horario')">Horario</div>
+          <div class="config-nav-item" onclick="selectConfigTab(this,'tab-notif')">Notificaciones</div>
+          <div class="config-nav-item" onclick="selectConfigTab(this,'tab-integ')">Integraciones</div>
+        </div>
+        <div>
+          <!-- TAB: Perfil -->
+          <div class="config-panel" id="tab-perfil">
+            <div class="config-section-title">Perfil médico</div>
+            <div class="config-section-desc">Información visible en el sistema y para sus pacientes</div>
+            <div class="config-field"><label class="config-label">Nombre completo</label><input class="config-input" id="perfilNombre" value="Dr. Ruiz" /></div>
+            <div class="config-field"><label class="config-label">Especialidad</label><input class="config-input" id="perfilEspecialidad" value="Medicina General / Telemedicina" /></div>
+            <div class="config-field"><label class="config-label">Email de contacto</label><input class="config-input" id="perfilEmail" value="info@clinicastelemed.com" /></div>
+            <div class="config-field"><label class="config-label">Clínica</label><input class="config-input" id="perfilClinica" value="Clínicas TeleMed Panamá" /></div>
+            <div style="margin-top:4px;"><button class="btn-ghost" onclick="limpiarPerfil()">Limpiar</button></div>
+          </div>
+          <!-- TAB: Horario -->
+          <div class="config-panel" id="tab-horario" style="display:none;">
+            <div class="config-section-title">Horario de atención</div>
+            <div class="config-section-desc">Define los días y horas disponibles para citas</div>
+            <div class="config-field">
+              <label class="config-label">Días de atención</label>
+              <div class="days-row" id="daysRow">
+                <div class="day-chip active" data-day="lun" data-daylabel="Lunes" onclick="toggleDay(this)">
+                  <span class="day-edit-btn" onclick="event.stopPropagation(); editDayHours(this.closest('.day-chip'))" title="Editar horario de este día">✎</span>
+                  <span class="day-abbr">Lun</span><span class="day-hours">08:00–17:00</span>
+                </div>
+                <div class="day-chip active" data-day="mar" data-daylabel="Martes" onclick="toggleDay(this)">
+                  <span class="day-edit-btn" onclick="event.stopPropagation(); editDayHours(this.closest('.day-chip'))" title="Editar horario de este día">✎</span>
+                  <span class="day-abbr">Mar</span><span class="day-hours">08:00–17:00</span>
+                </div>
+                <div class="day-chip active" data-day="mie" data-daylabel="Miércoles" onclick="toggleDay(this)">
+                  <span class="day-edit-btn" onclick="event.stopPropagation(); editDayHours(this.closest('.day-chip'))" title="Editar horario de este día">✎</span>
+                  <span class="day-abbr">Mié</span><span class="day-hours">08:00–17:00</span>
+                </div>
+                <div class="day-chip active" data-day="jue" data-daylabel="Jueves" onclick="toggleDay(this)">
+                  <span class="day-edit-btn" onclick="event.stopPropagation(); editDayHours(this.closest('.day-chip'))" title="Editar horario de este día">✎</span>
+                  <span class="day-abbr">Jue</span><span class="day-hours">08:00–17:00</span>
+                </div>
+                <div class="day-chip active" data-day="vie" data-daylabel="Viernes" onclick="toggleDay(this)">
+                  <span class="day-edit-btn" onclick="event.stopPropagation(); editDayHours(this.closest('.day-chip'))" title="Editar horario de este día">✎</span>
+                  <span class="day-abbr">Vie</span><span class="day-hours">08:00–17:00</span>
+                </div>
+                <div class="day-chip off" data-day="sab" data-daylabel="Sábado" onclick="toggleDay(this)">
+                  <span class="day-edit-btn" onclick="event.stopPropagation(); editDayHours(this.closest('.day-chip'))" title="Editar horario de este día">✎</span>
+                  <span class="day-abbr">Sáb</span><span class="day-hours">08:00–12:00</span>
+                </div>
+                <div class="day-chip off" data-day="dom" data-daylabel="Domingo" onclick="toggleDay(this)">
+                  <span class="day-edit-btn" onclick="event.stopPropagation(); editDayHours(this.closest('.day-chip'))" title="Editar horario de este día">✎</span>
+                  <span class="day-abbr">Dom</span><span class="day-hours">—</span>
+                </div>
+              </div>
+              <div class="day-hours-editor" id="dayHoursEditor"></div>
+            </div>
+            <div class="config-field"><label class="config-label">Hora de inicio</label><input class="config-input" type="time" id="horaInicioGeneral" value="08:00" onchange="guardarHorarioConfig();renderSlots();" /></div>
+            <div class="config-field"><label class="config-label">Hora de cierre</label><input class="config-input" type="time" id="horaCierreGeneral" value="17:00" onchange="guardarHorarioConfig();renderSlots();" /></div>
+            <div class="config-field"><label class="config-label">Duración por defecto de cita</label>
+              <select class="config-input" id="durCita" onchange="guardarHorarioConfig();renderSlots();">
+                <option value="15">15 minutos</option>
+                <option value="30">30 minutos</option>
+                <option value="45" selected>45 minutos</option>
+                <option value="60">60 minutos</option>
+                <option value="75">75 minutos</option>
+                <option value="90">90 minutos</option>
+                <option value="105">105 minutos</option>
+                <option value="120">120 minutos</option>
+              </select>
+            </div>
+          </div>
+          <!-- TAB: Notificaciones -->
+          <div class="config-panel" id="tab-notif" style="display:none;">
+            <div class="config-section-title">Notificaciones</div>
+            <div class="config-section-desc">Controla cuándo y cómo recibes alertas</div>
+            <div class="config-toggle"><div class="toggle-info"><div class="toggle-label">Confirmación de cita por email</div><div class="toggle-desc">Envía confirmación automática al paciente</div></div><div class="toggle-switch on" onclick="toggleSwitch(this)"></div></div>
+            <div class="config-toggle"><div class="toggle-info"><div class="toggle-label">Recordatorio SMS (24h antes)</div><div class="toggle-desc">Mensaje automático de recordatorio</div></div><div class="toggle-switch on" onclick="toggleSwitch(this)"></div></div>
+            <div class="config-toggle"><div class="toggle-info"><div class="toggle-label">Recordatorio WhatsApp (24h antes)</div><div class="toggle-desc">Mensaje automático de recordatorio</div></div><div class="toggle-switch on" onclick="toggleSwitch(this)"></div></div>
+            <div class="config-toggle"><div class="toggle-info"><div class="toggle-label">Enlace de videollamada automático</div><div class="toggle-desc">Envía el link de Daily.co al confirmar cita</div></div><div class="toggle-switch on" onclick="toggleSwitch(this)"></div></div>
+            <div class="config-toggle"><div class="toggle-info"><div class="toggle-label">Alertas de cancelación</div><div class="toggle-desc">Notificación cuando un paciente cancela</div></div><div class="toggle-switch" onclick="toggleSwitch(this)"></div></div>
+          </div>
+          <!-- TAB: Integraciones -->
+          <div class="config-panel" id="tab-integ" style="display:none;">
+            <div class="config-section-title">Integraciones activas</div>
+            <div class="config-section-desc">Conexiones con servicios externos</div>
+            <div class="config-toggle"><div class="toggle-info"><div class="toggle-label">Wix Bookings</div><div class="toggle-desc">Sincronización de citas desde Wix</div></div><div class="toggle-switch on" onclick="toggleSwitch(this)"></div></div>
+            <div class="config-toggle"><div class="toggle-info"><div class="toggle-label">Supabase</div><div class="toggle-desc">Base de datos y almacenamiento</div></div><div class="toggle-switch on" onclick="toggleSwitch(this)"></div></div>
+            <div class="config-toggle"><div class="toggle-info"><div class="toggle-label">Daily.co / Telemedicina</div><div class="toggle-desc">Videollamadas seguras para consultas</div></div><div class="toggle-switch on" onclick="toggleSwitch(this)"></div></div>
+
+            <div class="config-section-title" style="margin-top:26px;">Asistente de Nota SOAP (IA)</div>
+            <div class="config-section-desc">Motor de IA usado para redactar el borrador de la nota SOAP a partir de la transcripción de la teleconsulta. Compatible con cualquier proveedor que use formato de API tipo OpenAI (igual que en Assist-Med).</div>
+            <div class="config-field"><label class="config-label">Endpoint de la API</label><input class="config-input" id="soapApiEndpoint" placeholder="https://api.openai.com/v1/chat/completions" /></div>
+            <div class="config-field"><label class="config-label">API Key</label><input class="config-input" id="soapApiKey" type="password" placeholder="sk-..." /></div>
+            <div class="config-field"><label class="config-label">Modelo</label><input class="config-input" id="soapApiModel" placeholder="gpt-4o-mini, claude-3-5-sonnet, etc." /></div>
+            <div style="margin-top:4px;display:flex;gap:10px;"><button class="btn-ghost" onclick="guardarConfigSoap()">Guardar configuración de IA</button><button class="btn-ghost" onclick="limpiarConfigSoap()">Limpiar</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /app -->
+
+<!-- PATIENT DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()">
+  <div class="drawer" onclick="event.stopPropagation()">
+    <div class="drawer-head">
+      <span style="font-size:13px;font-weight:600;color:var(--gray-900);">Detalle del paciente</span>
+      <button class="drawer-close" onclick="closeDrawer()">×</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-actions">
+      <button class="btn-primary" id="drawerCallBtn" onclick="drawerStartCall()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        Iniciar teleconsulta
+      </button>
+      <button class="btn-ghost" onclick="drawerNewAppt()">Reagendar cita</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NUEVA CITA -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Nueva cita de teleconsulta</span>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Paciente</label>
+      <input class="form-input" placeholder="Nombre completo del paciente" id="f_patient" />
+    </div>
+    <div class="form-row">
+      <label class="form-label">Cédula / Pasaporte</label>
+      <input class="form-input" placeholder="Número de cédula o pasaporte" id="f_cedula" />
+    </div>
+    <div class="form-row-2">
+      <div><label class="form-label">Fecha</label><input class="form-input" type="date" id="f_date" /></div>
+      <div><label class="form-label">Hora</label><input class="form-input" type="time" id="f_time" /></div>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Tipo de consulta</label>
+      <select class="form-select" id="f_type">
+        <option>Teleconsulta — General</option>
+        <option>Teleconsulta — Primera vez</option>
+        <option>Teleconsulta — Seguimiento</option>
+        <option>Teleconsulta — Resultados</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Motivo / Notas</label>
+      <textarea class="form-input" rows="2" id="f_notes" placeholder="Motivo de consulta o notas adicionales..." style="resize:vertical;"></textarea>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Confirmaciones y recordatorios</label>
+      <div class="form-check-group">
+        <label class="form-check"><input type="checkbox" checked id="f_confEmail" /> Enviar confirmación por email al paciente</label>
+        <label class="form-check"><input type="checkbox" checked id="f_confWhatsapp" /> Enviar confirmación por WhatsApp al paciente</label>
+        <label class="form-check"><input type="checkbox" checked id="f_recSms" /> Enviar recordatorio por SMS (24h antes)</label>
+        <label class="form-check"><input type="checkbox" checked id="f_recWhatsapp" /> Enviar recordatorio por WhatsApp (24h antes)</label>
+        <label class="form-check"><input type="checkbox" id="f_rec1h" /> Recordatorio adicional 1h antes</label>
+        <label class="form-check"><input type="checkbox" checked id="f_videoLink" /> Enviar enlace de videollamada</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-ghost" onclick="limpiarFormAppt()">Limpiar</button>
+      <button class="btn-ghost" onclick="closeModal()">Cancelar</button>
+      <button class="btn-primary" onclick="saveAppt()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Agendar cita
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NUEVO PACIENTE -->
+<div class="modal-overlay" id="modalPacienteOverlay" onclick="closeModalPacienteOutside(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Nuevo paciente</span>
+      <button class="modal-close" onclick="closeModalPaciente()">×</button>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Nombre completo</label>
+      <input class="form-input" placeholder="Nombre completo del paciente" id="np_nombre" />
+    </div>
+    <div class="form-row">
+      <label class="form-label">Cédula / Pasaporte</label>
+      <input class="form-input" placeholder="Número de cédula o pasaporte" id="np_cedula" />
+    </div>
+    <div class="form-row-2">
+      <div><label class="form-label">Fecha de nacimiento</label><input class="form-input" type="date" id="np_fechaNacimiento" onchange="_autoCalcularEdadPaciente()" /></div>
+      <div><label class="form-label">País de nacimiento</label><input class="form-input" placeholder="Panamá" id="np_paisNacimiento" /></div>
+    </div>
+    <div class="form-row-2">
+      <div><label class="form-label">Edad</label><input class="form-input" type="number" min="0" max="120" placeholder="Años" id="np_edad" /></div>
+      <div><label class="form-label">Teléfono</label><input class="form-input" placeholder="507-6000-0000" id="np_telefono" /></div>
+    </div>
+    <div class="form-row">
+      <label class="form-label">E-mail</label>
+      <input class="form-input" type="email" placeholder="paciente@correo.com" id="np_email" />
+    </div>
+    <div class="modal-footer">
+      <button class="btn-ghost" onclick="limpiarFormPaciente()">Limpiar</button>
+      <button class="btn-ghost" onclick="closeModalPaciente()">Cancelar</button>
+      <button class="btn-primary" onclick="crearPaciente()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Guardar paciente
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+/* ============================================================
+   NAVEGACIÓN ENTRE MÓDULOS
+   ============================================================ */
+const MODULE_META = {
+  inicio:         { title: 'Agenda Médica',         sub:  'martes, 14 de abril de 2026' },
+  calendario:     { title: 'Calendario',            sub:  'Vista mensual de citas' },
+  pacientes:      { title: 'Pacientes',             sub:  '147 pacientes registrados' },
+  video:          { title: 'Teleconsultas',         sub:  'Sala de videollamadas' },
+  notificaciones: { title: 'Notificaciones',        sub:  '4 sin leer' },
+  expedientes:    { title: 'Expedientes médicos',   sub:  'Historial clínico digital' },
+  config:         { title: 'Configuración',         sub:  'Clínicas TeleMed Panamá' }
+};
+
+function showModule(name) {
+  // Oculta todos los módulos
+  document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
+  // Desactiva todos los nav items
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+  // Activa el módulo correcto
+  const mod = document.getElementById('mod-' + name);
+  if (mod) mod.classList.add('active');
+
+  // Activa el nav item correspondiente
+  const navItems = document.querySelectorAll('.nav-item');
+  const navMap = ['inicio','calendario','pacientes','video','notificaciones','expedientes'];
+  const idx = navMap.indexOf(name);
+  if (idx >= 0 && navItems[idx]) navItems[idx].classList.add('active');
+  if (name === 'config') {
+    // El ítem de config está en sidebar-bottom (primer nav-item dentro)
+    const configNav = document.querySelector('.sidebar-bottom .nav-item');
+    if (configNav) configNav.classList.add('active');
+  }
+
+  // Actualiza el topbar
+  const meta = MODULE_META[name] || {};
+  document.getElementById('topbarTitle').textContent = meta.title || '';
+  document.getElementById('topbarSub').textContent   = meta.sub   || '';
+
+  // Los botones "Nueva cita" / "Iniciar llamada" de la barra superior son
+  // accesos rápidos generales. Se ocultan solo en los módulos que ya
+  // tienen su propio botón con la misma acción en el encabezado del
+  // módulo (Calendario: "Nueva cita", Teleconsultas: "Iniciar llamada"),
+  // para que esa acción no aparezca duplicada en la misma pantalla.
+  document.getElementById('topbarNewApptBtn').style.display = (name === 'calendario') ? 'none' : '';
+  document.getElementById('topbarCallBtn').style.display    = (name === 'video') ? 'none' : '';
+
+  // Render especial para el calendario completo
+  if (name === 'calendario') renderCalendarioActivo();
+}
+
+/* ============================================================
+   DASHBOARD REAL — CITAS PERSISTENTES (localStorage)
+   ============================================================
+   Todo lo que sigue reemplaza los datos estáticos de ejemplo por
+   un modelo de datos real (array APPOINTMENTS) que se guarda en
+   este navegador y sobrevive a recargar la página. "Hoy" se fija
+   en 2026-04-14 para que coincida con el resto de la demo (mismo
+   criterio que ya usaba el calendario original) — cuando conectes
+   esto a Supabase más adelante, este es el punto donde cambiar la
+   fuente de datos sin tocar el resto del dashboard.
+   ============================================================ */
+const DAYS   = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+const FULL_DAYS = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const TODAY_ISO = '2026-04-14';
+const [TODAY_Y, TODAY_M, TODAY_D] = TODAY_ISO.split('-').map(Number); // TODAY_M es 1-12 aquí
+
+const APPTS_STORAGE_KEY = 'agendaMedica_citas_v1';
+
+function _pad(n){ return String(n).padStart(2,'0'); }
+function _isoDate(y,m0,d){ return `${y}-${_pad(m0+1)}-${_pad(d)}`; } // m0 = mes 0-indexado
+
+function _seedAppointments() {
+  // Igual a los datos de ejemplo que ya tenía la app — así la primera
+  // carga se ve idéntica a como estaba, pero ahora es un dato real.
+  return [
+    { id:'seed-1', patientKey:'MT', patientName:'María Torres', date:TODAY_ISO, time:'09:00', type:'Consulta general', status:'confirmada' },
+    { id:'seed-2', patientKey:'CR', patientName:'Carlos Rodríguez', date:TODAY_ISO, time:'10:30', type:'Control HTA', status:'confirmada' },
+    { id:'seed-3', patientKey:'AJ', patientName:'Ana Jiménez', date:TODAY_ISO, time:'11:15', type:'Seguimiento DM2', status:'pendiente' },
+    { id:'seed-4', patientKey:'LM', patientName:'Luis Mendoza', date:TODAY_ISO, time:'14:00', type:'Primera consulta', status:'confirmada' },
+    { id:'seed-5', patientKey:'SV', patientName:'Sofía Vargas', date:TODAY_ISO, time:'15:30', type:'Resultados laboratorio', status:'confirmada' },
+    { id:'seed-6', patientKey:'RP', patientName:'Roberto Pérez', date:TODAY_ISO, time:'16:45', type:'Control post-op', status:'pendiente' },
+    { id:'seed-7', patientKey:'PA', patientName:'Pedro Alvarado', date:'2026-04-16', time:'09:00', type:'Control', status:'cancelada' },
+    { id:'seed-8', patientKey:'MT', patientName:'María Torres', date:'2026-04-02', time:'09:00', type:'Consulta', status:'confirmada' },
+    { id:'seed-9', patientKey:'CR', patientName:'Carlos Rodríguez', date:'2026-04-07', time:'10:30', type:'Control', status:'confirmada' },
+    { id:'seed-10', patientKey:'AJ', patientName:'Ana Jiménez', date:'2026-04-09', time:'11:00', type:'Seguimiento', status:'pendiente' },
+    { id:'seed-11', patientKey:'SV', patientName:'Sofía Vargas', date:'2026-04-18', time:'15:30', type:'Resultados', status:'confirmada' },
+    { id:'seed-12', patientKey:'RP', patientName:'Roberto Pérez', date:'2026-04-21', time:'09:00', type:'Control', status:'pendiente' },
+    { id:'seed-13', patientKey:'MT', patientName:'María Torres', date:'2026-04-23', time:'10:00', type:'Seguimiento', status:'confirmada' },
+    { id:'seed-14', patientKey:'CR', patientName:'Carlos Rodríguez', date:'2026-04-28', time:'09:00', type:'Control', status:'confirmada' },
+  ];
+}
+
+let APPOINTMENTS = [];
+
+function loadAppointments() {
+  try {
+    const raw = localStorage.getItem(APPTS_STORAGE_KEY);
+    if (raw) { APPOINTMENTS = JSON.parse(raw); return; }
+  } catch(e) { console.error('No se pudo leer citas guardadas:', e); }
+  APPOINTMENTS = _seedAppointments();
+  saveAppointments();
+}
+
+function saveAppointments() {
+  try { localStorage.setItem(APPTS_STORAGE_KEY, JSON.stringify(APPOINTMENTS)); }
+  catch(e) { console.error('No se pudo guardar la cita:', e); toast('No se pudo guardar la cita en este navegador','warning'); }
+}
+
+function _apptsDeFecha(iso) {
+  return APPOINTMENTS.filter(a => a.date === iso).sort((a,b)=> a.time.localeCompare(b.time));
+}
+
+function _avatarPara(a) {
+  if (a.patientKey && PATIENTS[a.patientKey]) {
+    const p = PATIENTS[a.patientKey];
+    return { avatar:p.avatar, bg:p.bg, fg:p.fg };
+  }
+  const iniciales = (a.patientName||'??').split(' ').filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
+  return { avatar: iniciales || '??', bg:'#E9ECEF', fg:'#495057' };
+}
+
+function _badgeInfo(status) {
+  if (status === 'confirmada') return { cls:'badge-conf', label:'Confirmada' };
+  if (status === 'pendiente')  return { cls:'badge-pend', label:'Pendiente' };
+  return { cls:'badge-canc', label:'Canceló' };
+}
+
+/* ---------- ESTADÍSTICAS + CITAS DEL DÍA (dashboard) ---------- */
+
+function renderDashboardStats() {
+  const deHoy = _apptsDeFecha(TODAY_ISO);
+  const confirmadas = deHoy.filter(a=>a.status==='confirmada').length;
+  const pendientes  = deHoy.filter(a=>a.status==='pendiente').length;
+
+  // "Esta semana" = semana (Dom-Sáb) que contiene TODAY_ISO
+  const hoyDate = new Date(TODAY_Y, TODAY_M-1, TODAY_D);
+  const inicioSemana = new Date(hoyDate); inicioSemana.setDate(hoyDate.getDate()-hoyDate.getDay());
+  const finSemana = new Date(inicioSemana); finSemana.setDate(inicioSemana.getDate()+6);
+  const canceladasSemana = APPOINTMENTS.filter(a=>{
+    if (a.status!=='cancelada') return false;
+    const d = new Date(a.date+'T00:00:00');
+    return d>=inicioSemana && d<=finSemana;
+  }).length;
+
+  document.getElementById('statCitasHoy').textContent = deHoy.length;
+  document.getElementById('statConfirmadas').textContent = confirmadas;
+  document.getElementById('statPendientes').textContent = pendientes;
+  document.getElementById('statCanceladas').textContent = canceladasSemana;
+  document.getElementById('statCitasHoyChange').textContent = deHoy.length ? `${deHoy.length} programada${deHoy.length===1?'':'s'} hoy` : 'Sin citas hoy';
+  document.getElementById('statConfirmadasChange').textContent = deHoy.length ? Math.round(confirmadas/deHoy.length*100)+'% del total' : '—';
+}
+
+function renderApptListHoy() {
+  const wrap = document.getElementById('apptListHoyWrap');
+  const citas = _apptsDeFecha(TODAY_ISO).filter(a=>a.status!=='cancelada');
+  if (!citas.length) {
+    wrap.innerHTML = '<div class="section-sep" style="padding-top:20px;color:var(--gray-300);">Sin citas registradas para hoy</div>';
+    return;
+  }
+  const manana = citas.filter(a => a.time < '12:00');
+  const tarde  = citas.filter(a => a.time >= '12:00');
+
+  const renderGrupo = (titulo, lista) => {
+    if (!lista.length) return '';
+    const items = lista.map(a=>{
+      const av = _avatarPara(a);
+      const badge = _badgeInfo(a.status);
+      const [h,m] = a.time.split(':');
+      const hNum = parseInt(h,10);
+      const ampm = hNum < 12 ? 'AM' : 'PM';
+      const hDisp = a.time;
+      const clickable = a.patientKey ? `onclick="showApptDetail('${a.patientKey}')"` : '';
+      return `<div class="appt-item" ${clickable} style="${a.patientKey?'':'cursor:default;'}">
+        <div class="appt-time-col"><div class="appt-time">${hDisp}</div><div class="appt-ampm">${ampm}</div></div>
+        <div class="appt-avatar" style="background:${av.bg};color:${av.fg};">${av.avatar}</div>
+        <div class="appt-info"><div class="appt-name">${a.patientName}</div><div class="appt-type">${a.type} · Teleconsulta</div></div>
+        <span class="appt-badge ${badge.cls}">${badge.label}</span>
+      </div>`;
+    }).join('');
+    return `<div class="section-sep">${titulo}</div><div class="appt-list">${items}</div>`;
+  };
+
+  wrap.innerHTML = renderGrupo('Mañana', manana) + renderGrupo('Tarde', tarde);
+}
+
+function renderDashboard() {
+  renderDashboardStats();
+  renderApptListHoy();
+}
+
+/* ---------- CALENDARIO MINI (dashboard sidebar) ---------- */
+
+let curYear = TODAY_Y, curMonth = TODAY_M-1, selDay = TODAY_D;
+
+function renderCal() {
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+  DAYS.forEach(d => { const el = document.createElement('div'); el.className='cal-day-name'; el.textContent=d; grid.appendChild(el); });
+  const first = new Date(curYear, curMonth, 1).getDay();
+  const days  = new Date(curYear, curMonth+1, 0).getDate();
+  const prevD = new Date(curYear, curMonth, 0).getDate();
+  const diasConCita = new Set(APPOINTMENTS.filter(a=>a.status!=='cancelada').map(a=>a.date));
+  for(let i=0;i<first;i++){ const el=document.createElement('div'); el.className='cal-day other-month'; el.textContent=prevD-first+1+i; grid.appendChild(el); }
+  for(let d=1;d<=days;d++){
+    const el=document.createElement('div'); el.className='cal-day'; el.textContent=d;
+    const iso = _isoDate(curYear,curMonth,d);
+    const isToday = iso===TODAY_ISO;
+    if(isToday) el.classList.add('today');
+    if(d===selDay&&curYear===TODAY_Y&&curMonth===TODAY_M-1) el.classList.add('selected');
+    if(diasConCita.has(iso)) el.classList.add('has-appt');
+    el.onclick=()=>selectDay(d);
+    grid.appendChild(el);
+  }
+  document.getElementById('calMiniMonth').textContent = MONTHS[curMonth]+' '+curYear;
+}
+
+function selectDay(d) {
+  selDay=d; renderCal(); renderSlots();
+  const iso = _isoDate(curYear,curMonth,d);
+  const label = iso===TODAY_ISO ? 'hoy' : `${d} de ${MONTHS[curMonth]}`;
+  document.getElementById('selDateLabel').textContent=label;
+}
+
+function changeMonth(dir) {
+  curMonth+=dir;
+  if(curMonth>11){curMonth=0;curYear++;}
+  if(curMonth<0){curMonth=11;curYear--;}
+  renderCal();
+}
+
+/* ---------- HORARIOS DISPONIBLES (conectado a Configuración > Horario) ---------- */
+
+function _leerHorarioDia(diaAbrev) {
+  // diaAbrev: 'lun','mar','mie','jue','vie','sab','dom' (coincide con data-day de los chips)
+  const chip = document.querySelector(`.day-chip[data-day="${diaAbrev}"]`);
+  if (!chip) return null;
+  const activo = chip.classList.contains('active');
+  const texto = chip.querySelector('.day-hours').textContent.trim();
+  if (!activo || texto === '—' || !texto.includes('–')) return { activo:false };
+  const [inicio, fin] = texto.split('–').map(s=>s.trim());
+  return { activo:true, inicio, fin };
+}
+
+const DOW_TO_CHIP = ['dom','lun','mar','mie','jue','vie','sab']; // Date.getDay(): 0=domingo
+
+function generateSlotsForDate(iso) {
+  const [y,m,d] = iso.split('-').map(Number);
+  const dow = new Date(y, m-1, d).getDay();
+  const horario = _leerHorarioDia(DOW_TO_CHIP[dow]);
+  if (!horario || !horario.activo) return [];
+
+  const durSel = document.getElementById('durCita');
+  const duracionMin = durSel ? parseInt(durSel.value,10) : 45;
+
+  const [hi,mi] = horario.inicio.split(':').map(Number);
+  const [hf,mf] = horario.fin.split(':').map(Number);
+  let cursor = hi*60+mi;
+  const finMin = hf*60+mf;
+  const slots = [];
+  while (cursor + duracionMin <= finMin) {
+    slots.push(`${_pad(Math.floor(cursor/60))}:${_pad(cursor%60)}`);
+    cursor += duracionMin;
+  }
+  return slots;
+}
+
+function renderSlots() {
+  const grid=document.getElementById('slotGrid'); grid.innerHTML='';
+  const iso = _isoDate(curYear,curMonth,selDay);
+  const slots = generateSlotsForDate(iso);
+  const ocupados = new Set(_apptsDeFecha(iso).filter(a=>a.status!=='cancelada').map(a=>a.time));
+
+  if (!slots.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1;font-size:12px;color:var(--gray-300);padding:6px 0;">Sin horario de atención configurado para este día</div>';
+    return;
+  }
+  slots.forEach(s=>{
+    const el=document.createElement('div'); el.className='slot'; el.textContent=s;
+    if(ocupados.has(s)) el.classList.add('taken');
+    else el.onclick=()=>pickSlot(el,s,iso);
+    grid.appendChild(el);
+  });
+}
+
+function pickSlot(el,s,iso) {
+  document.querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('f_date').value = iso;
+  document.getElementById('f_time').value = s;
+  openModal();
+}
+
+/* ---------- CALENDARIO COMPLETO (módulo Calendario) ---------- */
+
+let fullYear = TODAY_Y, fullMonth = TODAY_M-1;
+
+function renderFullCal() {
+  const grid = document.getElementById('calFullGrid');
+  // Mantiene cabeceras de días
+  const headers = Array.from(grid.querySelectorAll('.cal-full-day-name'));
+  grid.innerHTML = '';
+  headers.forEach(h => grid.appendChild(h));
+
+  const first = new Date(fullYear, fullMonth, 1).getDay();
+  const days  = new Date(fullYear, fullMonth+1, 0).getDate();
+  const prevD = new Date(fullYear, fullMonth, 0).getDate();
+
+  for(let i=0;i<first;i++){
+    const cell = document.createElement('div'); cell.className='cal-full-cell';
+    const num  = document.createElement('div'); num.className='cal-full-num other'; num.textContent=prevD-first+1+i;
+    cell.appendChild(num); grid.appendChild(cell);
+  }
+  for(let d=1;d<=days;d++){
+    const iso = _isoDate(fullYear,fullMonth,d);
+    const cell = document.createElement('div'); cell.className='cal-full-cell';
+    cell.onclick = ()=>{ document.getElementById('f_date').value=iso; openModal(); };
+    const num  = document.createElement('div');
+    const isToday = iso===TODAY_ISO;
+    num.className='cal-full-num'+(isToday?' today':''); num.textContent=d;
+    cell.appendChild(num);
+    _apptsDeFecha(iso).forEach(a=>{
+      const av = _avatarPara(a);
+      const ev_el=document.createElement('div');
+      let cls = a.status==='pendiente' ? 'amber' : '';
+      let estilo = a.status==='cancelada' ? 'text-decoration:line-through;opacity:0.55;' : '';
+      ev_el.className='cal-event '+cls;
+      ev_el.style.cssText += estilo;
+      ev_el.textContent = `${a.patientName.split(' ')[0]} ${a.time}`;
+      ev_el.style.cursor='pointer';
+      if (a.patientKey) ev_el.onclick=(e)=>{ e.stopPropagation(); openPatientPanel(a.patientKey); };
+      cell.appendChild(ev_el);
+    });
+    grid.appendChild(cell);
+  }
+  document.getElementById('calFullMonth').textContent = MONTHS[fullMonth]+' '+fullYear;
+}
+
+function changeFullMonth(dir) {
+  fullMonth+=dir;
+  if(fullMonth>11){fullMonth=0;fullYear++;}
+  if(fullMonth<0){fullMonth=11;fullYear--;}
+  renderFullCal();
+}
+
+/* ---------- VISTAS SEMANAL Y DIARIA (módulo Calendario) ---------- */
+
+let calView = 'month'; // 'month' | 'week' | 'day'
+let calWeekAnchor = new Date(TODAY_Y, TODAY_M-1, TODAY_D); // cualquier fecha dentro de la semana mostrada
+let calDayAnchor  = new Date(TODAY_Y, TODAY_M-1, TODAY_D);
+
+function setCalView(view) {
+  calView = view;
+  document.querySelectorAll('.cal-view-btn').forEach(b=>b.classList.toggle('active', b.dataset.view===view));
+  document.getElementById('calFullGrid').style.display = (view==='month') ? 'grid' : 'none';
+  document.getElementById('calWeekGrid').style.display = (view==='week')  ? 'grid' : 'none';
+  document.getElementById('calDayGrid').style.display  = (view==='day')   ? 'block' : 'none';
+  const titleEl = document.getElementById('calModuleTitle');
+  if (titleEl) titleEl.textContent = view==='month' ? 'Calendario mensual' : (view==='week' ? 'Calendario semanal' : 'Calendario diario');
+  renderCalendarioActivo();
+}
+
+function changeFullPeriod(dir) {
+  if (calView === 'month') { changeFullMonth(dir); return; }
+  if (calView === 'week')  { calWeekAnchor = new Date(calWeekAnchor); calWeekAnchor.setDate(calWeekAnchor.getDate() + dir*7); renderWeekView(); return; }
+  if (calView === 'day')   { calDayAnchor = new Date(calDayAnchor); calDayAnchor.setDate(calDayAnchor.getDate() + dir); renderDayView(); return; }
+}
+
+function goToday() {
+  if (calView === 'month') { fullYear = TODAY_Y; fullMonth = TODAY_M-1; renderFullCal(); }
+  else if (calView === 'week') { calWeekAnchor = new Date(TODAY_Y, TODAY_M-1, TODAY_D); renderWeekView(); }
+  else { calDayAnchor = new Date(TODAY_Y, TODAY_M-1, TODAY_D); renderDayView(); }
+}
+
+function renderCalendarioActivo() {
+  if (calView === 'month') renderFullCal();
+  else if (calView === 'week') renderWeekView();
+  else renderDayView();
+}
+
+function _startOfWeek(d) {
+  const r = new Date(d);
+  r.setDate(r.getDate() - r.getDay());
+  r.setHours(0,0,0,0);
+  return r;
+}
+
+function _fmtWeekLabel(start, end) {
+  if (start.getMonth() === end.getMonth()) {
+    return `${start.getDate()}–${end.getDate()} de ${MONTHS[start.getMonth()]} ${end.getFullYear()}`;
+  }
+  return `${start.getDate()} ${MONTHS[start.getMonth()].slice(0,3)} – ${end.getDate()} ${MONTHS[end.getMonth()].slice(0,3)} ${end.getFullYear()}`;
+}
+
+function renderWeekView() {
+  const grid = document.getElementById('calWeekGrid');
+  grid.innerHTML = '';
+  const start = _startOfWeek(calWeekAnchor);
+
+  for (let i=0; i<7; i++) {
+    const d = new Date(start); d.setDate(start.getDate()+i);
+    const iso = _isoDate(d.getFullYear(), d.getMonth(), d.getDate());
+    const isToday = iso === TODAY_ISO;
+
+    const col = document.createElement('div'); col.className = 'cal-week-col';
+    const header = document.createElement('div'); header.className = 'cal-week-col-header';
+    header.innerHTML = `<div class="cal-week-day-name">${DAYS[d.getDay()]}</div><div class="cal-week-day-num${isToday?' today':''}">${d.getDate()}</div>`;
+    header.onclick = () => { calDayAnchor = new Date(d); setCalView('day'); };
+    col.appendChild(header);
+
+    const citas = _apptsDeFecha(iso);
+    if (!citas.length) {
+      const vacio = document.createElement('div'); vacio.className = 'cal-week-empty'; vacio.textContent = '—';
+      col.appendChild(vacio);
+    } else {
+      citas.forEach(a=>{
+        const el = document.createElement('div');
+        const cls = a.status==='pendiente' ? 'amber' : (a.status==='cancelada' ? 'canc' : 'green');
+        el.className = 'cal-week-appt ' + cls;
+        el.textContent = `${a.time} ${a.patientName.split(' ')[0]}`;
+        el.onclick = (e)=>{ e.stopPropagation(); if (a.patientKey) openPatientPanel(a.patientKey); };
+        col.appendChild(el);
+      });
+    }
+    grid.appendChild(col);
+  }
+
+  const end = new Date(start); end.setDate(start.getDate()+6);
+  document.getElementById('calFullMonth').textContent = _fmtWeekLabel(start, end);
+}
+
+function renderDayView() {
+  const wrap = document.getElementById('calDayGrid');
+  const d = calDayAnchor;
+  const iso = _isoDate(d.getFullYear(), d.getMonth(), d.getDate());
+  const isToday = iso === TODAY_ISO;
+  const citas = _apptsDeFecha(iso);
+
+  let html = `<div class="cal-day-view-header">${FULL_DAYS[d.getDay()]} ${d.getDate()} de ${MONTHS[d.getMonth()]}, ${d.getFullYear()}${isToday ? ' <span class="cal-today-tag">Hoy</span>' : ''}</div>`;
+
+  if (!citas.length) {
+    html += `<div class="section-sep" style="padding-top:14px;color:var(--gray-300);">Sin citas programadas este día</div>`;
+  } else {
+    html += `<div class="appt-list">` + citas.map(a=>{
+      const av = _avatarPara(a);
+      const badge = _badgeInfo(a.status);
+      const clickable = a.patientKey ? `onclick="showApptDetail('${a.patientKey}')"` : '';
+      return `<div class="appt-item" ${clickable} style="${a.patientKey?'':'cursor:default;'}">
+        <div class="appt-time-col"><div class="appt-time">${a.time}</div></div>
+        <div class="appt-avatar" style="background:${av.bg};color:${av.fg};">${av.avatar}</div>
+        <div class="appt-info"><div class="appt-name">${a.patientName}</div><div class="appt-type">${a.type}</div></div>
+        <span class="appt-badge ${badge.cls}">${badge.label}</span>
+      </div>`;
+    }).join('') + `</div>`;
+  }
+
+  const slots = generateSlotsForDate(iso);
+  const ocupados = new Set(citas.filter(a=>a.status!=='cancelada').map(a=>a.time));
+  html += `<div class="section-sep" style="margin-top:18px;">Horarios disponibles</div>`;
+  if (!slots.length) {
+    html += `<div style="font-size:12px;color:var(--gray-300);padding:8px 20px 4px;">Sin horario de atención configurado para este día</div>`;
+  } else {
+    html += `<div class="slot-grid" style="padding:10px 20px 6px;">` + slots.map(s=>{
+      const taken = ocupados.has(s);
+      return `<div class="slot${taken?' taken':''}" ${taken ? '' : `onclick="pickSlotDesdeDia('${s}')"`}>${s}</div>`;
+    }).join('') + `</div>`;
+  }
+
+  wrap.innerHTML = html;
+  document.getElementById('calFullMonth').textContent = `${FULL_DAYS[d.getDay()]} ${d.getDate()} de ${MONTHS[d.getMonth()]}, ${d.getFullYear()}`;
+}
+
+function pickSlotDesdeDia(s) {
+  const d = calDayAnchor;
+  const iso = _isoDate(d.getFullYear(), d.getMonth(), d.getDate());
+  document.getElementById('f_date').value = iso;
+  document.getElementById('f_time').value = s;
+  openModal();
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+function openModal()  { document.getElementById('modalOverlay').classList.add('open'); }
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+function closeModalOutside(e) { if(e.target===document.getElementById('modalOverlay')) closeModal(); }
+
+function limpiarFormAppt() {
+  document.getElementById('f_patient').value = '';
+  document.getElementById('f_cedula').value = '';
+  document.getElementById('f_date').value = '';
+  document.getElementById('f_time').value = '';
+  const tipoSelect = document.getElementById('f_type');
+  if (tipoSelect) tipoSelect.selectedIndex = 0;
+  document.getElementById('f_notes').value = '';
+  document.getElementById('f_confEmail').checked = true;
+  document.getElementById('f_confWhatsapp').checked = true;
+  document.getElementById('f_recSms').checked = true;
+  document.getElementById('f_recWhatsapp').checked = true;
+  document.getElementById('f_rec1h').checked = false;
+  document.getElementById('f_videoLink').checked = true;
+  document.querySelectorAll('.slot.selected').forEach(x=>x.classList.remove('selected'));
+  document.getElementById('f_patient').focus();
+  toast('Campos del formulario limpiados','info');
+}
+
+function saveAppt() {
+  const p=document.getElementById('f_patient').value.trim();
+  if(!p){ document.getElementById('f_patient').focus(); return; }
+  const fecha = document.getElementById('f_date').value;
+  const hora  = document.getElementById('f_time').value;
+  if(!fecha){ document.getElementById('f_date').focus(); toast('Selecciona una fecha','warning'); return; }
+  if(!hora){ document.getElementById('f_time').focus(); toast('Selecciona una hora','warning'); return; }
+
+  const cedula = document.getElementById('f_cedula').value.trim();
+  const tipoSelect = document.getElementById('f_type');
+  const tipo = tipoSelect ? tipoSelect.value.replace('Teleconsulta — ','') : 'Consulta';
+  const notasEl = document.getElementById('f_notes');
+  const notas = notasEl ? notasEl.value.trim() : '';
+
+  const patientKey = NAME_TO_KEY[p] || null;
+
+  const nuevaCita = {
+    id: 'cita-' + Date.now(),
+    patientKey,
+    patientName: p,
+    cedula,
+    date: fecha,
+    time: hora,
+    type: tipo + (notas ? (' — '+notas) : ''),
+    status: 'pendiente'
+  };
+  APPOINTMENTS.push(nuevaCita);
+  saveAppointments();
+
+  closeModal();
+  renderDashboard();
+  renderCal();
+  if (_isoDate(curYear,curMonth,selDay) === fecha) renderSlots();
+  if (document.getElementById('mod-calendario').classList.contains('active')) renderCalendarioActivo();
+
+  toast('Cita agendada correctamente para '+p,'success');
+  setTimeout(()=>toast('Confirmación enviada por email y SMS','info'),1200);
+}
+
+/* ============================================================
+   DATOS DE PACIENTES — persistentes (localStorage)
+   ============================================================
+   PATIENTS se guarda en este navegador y sobrevive a recargar la
+   página. En la primera carga se "siembra" con los mismos pacientes
+   de ejemplo que ya existían, para que el módulo se vea igual —
+   pero desde ese momento es un expediente real: agregar un paciente
+   nuevo, buscarlo o filtrarlo queda guardado aquí.
+   ============================================================ */
+const PATIENTS_STORAGE_KEY = 'agendaMedica_pacientes_v1';
+const PATIENTS = {}; // se llena en loadPatients()
+
+function _seedPatients() {
+  return {
+    'MT': { name:'María Torres',     id:'EXP-0021', avatar:'MT', bg:'#B5D4F4', fg:'#0C447C',
+            dx:'Hipertensión arterial', edad:'52 años', telefono:'507-6123-4567',
+            tags:['Hipertensión','Teleconsulta'], cronico:true, esNuevo:false, ultimaCitaTexto:'Última cita: 14/04/2026',
+            proxima:'Hoy 09:00 — Consulta general', estado:'Confirmada',
+            historial:[
+              { texto:'Control de presión — PA 130/85 mmHg. Ajuste de dosis lisinopril.', fecha:'01/04/2026' },
+              { texto:'Seguimiento HTA — buena adherencia. Sin síntomas.', fecha:'10/03/2026' },
+              { texto:'Primera teleconsulta — diagnóstico inicial HTA grado 1.', fecha:'12/02/2026' },
+            ]},
+    'CR': { name:'Carlos Rodríguez', id:'EXP-0034', avatar:'CR', bg:'#C0DD97', fg:'#27500A',
+            dx:'HTA + Diabetes Mellitus T2', edad:'61 años', telefono:'507-6234-5678',
+            tags:['HTA','Diabetes T2','Teleconsulta'], cronico:true, esNuevo:false, ultimaCitaTexto:'Última cita: 10/04/2026',
+            proxima:'Hoy 10:30 — Control HTA', estado:'Confirmada',
+            historial:[
+              { texto:'HbA1c 7.2% — control glucémico aceptable. Continúa metformina 850 mg.', fecha:'10/04/2026' },
+              { texto:'PA 145/90 — se ajusta amlodipino. Instrucciones dieta baja en sodio.', fecha:'15/03/2026' },
+            ]},
+    'AJ': { name:'Ana Jiménez',      id:'EXP-0058', avatar:'AJ', bg:'#FAC775', fg:'#633806',
+            dx:'Diabetes Mellitus T2', edad:'47 años', telefono:'507-6345-6789',
+            tags:['DM2','Teleconsulta'], cronico:true, esNuevo:false, ultimaCitaTexto:'Última cita: 07/04/2026',
+            proxima:'Hoy 11:15 — Seguimiento DM2', estado:'Pendiente',
+            historial:[
+              { texto:'Glucosa en ayunas 148 mg/dL. Se indica ajuste dieta y actividad física.', fecha:'07/04/2026' },
+              { texto:'Inicio de metformina 500 mg. Educación diabetológica.', fecha:'01/03/2026' },
+            ]},
+    'LM': { name:'Luis Mendoza',     id:'EXP-0071', avatar:'LM', bg:'#CECBF6', fg:'#3C3489',
+            dx:'Primera consulta', edad:'38 años', telefono:'507-6456-7890',
+            tags:['Primera consulta','Teleconsulta'], cronico:false, esNuevo:true, ultimaCitaTexto:'Nueva paciente',
+            proxima:'Hoy 14:00 — Primera consulta', estado:'Confirmada',
+            historial:[
+              { texto:'Paciente nuevo. Formulario de pre-consulta completado. Sin antecedentes registrados.', fecha:'14/04/2026' },
+            ]},
+    'SV': { name:'Sofía Vargas',     id:'EXP-0089', avatar:'SV', bg:'#9FE1CB', fg:'#085041',
+            dx:'Seguimiento post-tratamiento', edad:'34 años', telefono:'507-6567-8901',
+            tags:['Seguimiento','Teleconsulta'], cronico:false, esNuevo:false, ultimaCitaTexto:'Última cita: 01/04/2026',
+            proxima:'Hoy 15:30 — Resultados laboratorio', estado:'Confirmada',
+            historial:[
+              { texto:'Resultados de laboratorio pendientes de revisión. Función tiroidea normal.', fecha:'01/04/2026' },
+              { texto:'Post-tratamiento semana 6 — sin efectos adversos reportados.', fecha:'10/03/2026' },
+            ]},
+    'RP': { name:'Roberto Pérez',    id:'EXP-0102', avatar:'RP', bg:'#F5C4B3', fg:'#712B13',
+            dx:'Control post-operatorio', edad:'55 años', telefono:'507-6678-9012',
+            tags:['Post-operatorio','Teleconsulta'], cronico:false, esNuevo:false, ultimaCitaTexto:'Última cita: 03/04/2026',
+            proxima:'Hoy 16:45 — Control post-op', estado:'Pendiente',
+            historial:[
+              { texto:'Semana 3 post-operatoria. Herida cicatrizando bien. Analgesia en reducción.', fecha:'03/04/2026' },
+              { texto:'Alta hospitalaria. Indicaciones de reposo y seguimiento ambulatorio.', fecha:'24/03/2026' },
+            ]},
+    'PA': { name:'Pedro Alvarado',   id:'EXP-0115', avatar:'PA', bg:'#E9ECEF', fg:'#495057',
+            dx:'Gastritis crónica', edad:'44 años', telefono:'507-6789-0123',
+            tags:['Gastritis crónica','Teleconsulta'], cronico:true, esNuevo:false, ultimaCitaTexto:'Canceló — 16/04/2026',
+            proxima:'Canceló — 16/04/2026', estado:'Cancelada',
+            historial:[
+              { texto:'Canceló cita sin reagendar. Se envió mensaje de seguimiento.', fecha:'14/04/2026' },
+              { texto:'Endoscopía: gastritis antral leve. Inicio omeprazol 20 mg + dieta.', fecha:'28/03/2026' },
+            ]},
+  };
+}
+
+// Mapa de nombre → clave de PATIENTS (se reconstruye cada vez que cambian los pacientes)
+const NAME_TO_KEY = {};
+function rebuildNameToKey() {
+  Object.keys(NAME_TO_KEY).forEach(k => delete NAME_TO_KEY[k]);
+  Object.entries(PATIENTS).forEach(([k,v])=>{ NAME_TO_KEY[v.name]=k; });
+}
+
+function loadPatients() {
+  try {
+    const raw = localStorage.getItem(PATIENTS_STORAGE_KEY);
+    if (raw) { Object.assign(PATIENTS, JSON.parse(raw)); rebuildNameToKey(); return; }
+  } catch(e) { console.error('No se pudieron leer los pacientes guardados:', e); }
+  Object.assign(PATIENTS, _seedPatients());
+  rebuildNameToKey();
+  savePatients();
+}
+
+function savePatients() {
+  try { localStorage.setItem(PATIENTS_STORAGE_KEY, JSON.stringify(PATIENTS)); }
+  catch(e) { console.error('No se pudo guardar el paciente:', e); toast('No se pudo guardar el paciente en este navegador','warning'); }
+}
+
+let drawerPatientKey = null;
+
+/* ============================================================
+   DRAWER
+   ============================================================ */
+function openPatientPanel(key) {
+  const p = PATIENTS[key]; if(!p) return;
+  drawerPatientKey = key;
+  const badgeClass = p.estado==='Confirmada'?'badge-conf':p.estado==='Pendiente'?'badge-pend':'badge-canc';
+  document.getElementById('drawerBody').innerHTML = `
+    <div class="drawer-avatar" style="background:${p.bg};color:${p.fg};">${p.avatar}</div>
+    <div class="drawer-name">${p.name}</div>
+    <div class="drawer-id">${p.id}</div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Información</div>
+      <div class="drawer-row"><span class="drawer-row-label">Diagnóstico</span><span class="drawer-row-value">${p.dx}</span></div>
+      <div class="drawer-row"><span class="drawer-row-label">Edad</span><span class="drawer-row-value">${p.edad}</span></div>
+      <div class="drawer-row"><span class="drawer-row-label">Teléfono</span><span class="drawer-row-value">${p.telefono}</span></div>
+      ${p.cedula ? `<div class="drawer-row"><span class="drawer-row-label">Cédula/Pasaporte</span><span class="drawer-row-value">${p.cedula}</span></div>` : ''}
+      ${p.email ? `<div class="drawer-row"><span class="drawer-row-label">E-mail</span><span class="drawer-row-value">${p.email}</span></div>` : ''}
+      ${p.fechaNacimiento ? `<div class="drawer-row"><span class="drawer-row-label">Fecha de nacimiento</span><span class="drawer-row-value">${p.fechaNacimiento.split('-').reverse().join('/')}</span></div>` : ''}
+      ${p.paisNacimiento ? `<div class="drawer-row"><span class="drawer-row-label">País de nacimiento</span><span class="drawer-row-value">${p.paisNacimiento}</span></div>` : ''}
+      <div class="drawer-row"><span class="drawer-row-label">Próxima cita</span><span class="drawer-row-value">${p.proxima}</span></div>
+      <div class="drawer-row"><span class="drawer-row-label">Estado</span><span class="appt-badge ${badgeClass}" style="font-size:11px;">${p.estado}</span></div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Historial reciente</div>
+      <div class="drawer-history">
+        ${p.historial.map(h=>`<div class="drawer-hist-item">${h.texto}<div class="drawer-hist-date">${h.fecha}</div></div>`).join('')}
+      </div>
+    </div>`;
+  document.getElementById('drawerOverlay').classList.add('open');
+}
+
+function closeDrawer() { document.getElementById('drawerOverlay').classList.remove('open'); }
+
+function drawerStartCall() {
+  const key = drawerPatientKey;
+  closeDrawer();
+  showModule('video');
+  startCall(key);
+}
+
+function drawerNewAppt() {
+  closeDrawer();
+  if(drawerPatientKey) document.getElementById('f_patient').value = PATIENTS[drawerPatientKey].name;
+  openModal();
+}
+
+/* ============================================================
+   VIDEOLLAMADA REAL — Daily.co vía Supabase Edge Function
+   ============================================================ */
+
+// Config del proyecto Supabase (la "publishable key" es segura de exponer
+// aquí — está diseñada para uso en el navegador. La API key de Daily NUNCA
+// aparece en este archivo, vive solo como secret en Supabase).
+const SUPABASE_URL = 'https://iojskhxwowvchlfygljl.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_Re2gRignjtn63WTf_VmEcA_RJsI4gFk';
+const EDGE_FUNCTION_URL = SUPABASE_URL + '/functions/v1/crear-sala-daily';
+
+let dailyCallFrame = null; // instancia activa de la videollamada
+
+async function startCall(patientKey) {
+  showModule('video');
+
+  if (dailyCallFrame) {
+    toast('Ya hay una llamada en curso','warning');
+    return;
+  }
+
+  const placeholder = document.getElementById('videoPlaceholder');
+  const sub = document.getElementById('videoPlaceholderSub');
+  const container = document.getElementById('dailyFrameContainer');
+
+  sub.textContent = 'Creando sala segura…';
+  toast('Creando sala de videollamada…', 'info');
+
+  try {
+    const nombreSala = patientKey ? ('cita-' + patientKey + '-' + Date.now()) : undefined;
+
+    const resp = await fetch(EDGE_FUNCTION_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+        'apikey': SUPABASE_ANON_KEY
+      },
+      body: JSON.stringify({ nombreSala })
+    });
+
+    const data = await resp.json();
+
+    if (!resp.ok || !data.url) {
+      console.error('Error creando sala:', data);
+      toast('No se pudo crear la sala. Revisa la consola para más detalle.', 'warning');
+      sub.textContent = 'Selecciona un paciente para iniciar';
+      return;
+    }
+
+    // Monta la interfaz de video de Daily dentro de nuestro propio módulo —
+    // el paciente y tú nunca salen de la Agenda Médica.
+    placeholder.style.display = 'none';
+    container.style.display = 'block';
+
+    dailyCallFrame = window.DailyIframe.createFrame(container, {
+      iframeStyle: { width: '100%', height: '100%', border: '0' },
+      showLeaveButton: true,
+      showFullscreenButton: true
+    });
+
+    dailyCallFrame.on('left-meeting', endCall);
+    dailyCallFrame.on('error', (e) => {
+      console.error('Error de Daily:', e);
+      toast('Ocurrió un error en la videollamada', 'warning');
+    });
+
+    await dailyCallFrame.join({ url: data.url });
+    toast('Conectado a la sala', 'success');
+
+  } catch (err) {
+    console.error(err);
+    toast('No se pudo conectar con el servidor de video', 'warning');
+    sub.textContent = 'Selecciona un paciente para iniciar';
+  }
+}
+
+function endCall() {
+  if (dailyCallFrame) {
+    dailyCallFrame.destroy();
+    dailyCallFrame = null;
+  }
+  document.getElementById('dailyFrameContainer').style.display = 'none';
+  document.getElementById('videoPlaceholder').style.display = '';
+  document.getElementById('videoPlaceholderSub').textContent = 'Selecciona un paciente para iniciar';
+  toast('Llamada finalizada', 'info');
+
+  // Si había una transcripción en curso, la detenemos junto con la llamada.
+  if (transcripcionActiva) toggleTranscripcion();
+}
+
+/* ============================================================
+   TRANSCRIPCIÓN EN VIVO + NOTA SOAP (IA)
+   — Web Speech API (nativa del navegador, gratis, sin servicio externo)
+   — Nunca se grava audio ni video: solo texto, y solo mientras dura
+     la consulta. Al generar la nota, el texto de la transcripción
+     se descarta del mismo modo que el resto de la sesión.
+   ============================================================ */
+
+let reconocimientoVoz = null;
+let transcripcionActiva = false;
+let transcripcionTexto = '';
+
+function _soapConfig() {
+  return {
+    endpoint: localStorage.getItem('soapApiEndpoint') || '',
+    apiKey: localStorage.getItem('soapApiKey') || '',
+    modelo: localStorage.getItem('soapApiModel') || ''
+  };
+}
+
+function guardarConfigSoap() {
+  const endpoint = document.getElementById('soapApiEndpoint').value.trim();
+  const apiKey = document.getElementById('soapApiKey').value.trim();
+  const modelo = document.getElementById('soapApiModel').value.trim();
+  localStorage.setItem('soapApiEndpoint', endpoint);
+  localStorage.setItem('soapApiKey', apiKey);
+  localStorage.setItem('soapApiModel', modelo);
+  toast('Configuración de IA guardada en este navegador', 'success');
+}
+
+function limpiarConfigSoap() {
+  document.getElementById('soapApiEndpoint').value = '';
+  document.getElementById('soapApiKey').value = '';
+  document.getElementById('soapApiModel').value = '';
+  toast('Campos de configuración de IA limpiados (no se han guardado los cambios)', 'info');
+}
+
+function limpiarPerfil() {
+  document.getElementById('perfilNombre').value = '';
+  document.getElementById('perfilEspecialidad').value = '';
+  document.getElementById('perfilEmail').value = '';
+  document.getElementById('perfilClinica').value = '';
+  toast('Campos del perfil limpiados', 'info');
+}
+
+// Precarga los campos de configuración si ya había algo guardado
+function _cargarConfigSoapEnFormulario() {
+  const cfg = _soapConfig();
+  const elEndpoint = document.getElementById('soapApiEndpoint');
+  const elKey = document.getElementById('soapApiKey');
+  const elModelo = document.getElementById('soapApiModel');
+  if (elEndpoint) elEndpoint.value = cfg.endpoint;
+  if (elKey) elKey.value = cfg.apiKey;
+  if (elModelo) elModelo.value = cfg.modelo;
+}
+
+function toggleTranscripcion() {
+  const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const estadoEl = document.getElementById('soapEstado');
+  const boxEl = document.getElementById('soapTranscripcionBox');
+  const btnEl = document.getElementById('soapToggleTranscripcion');
+  const generarBtn = document.getElementById('soapGenerarBtn');
+
+  if (!SpeechRecognitionAPI) {
+    toast('Tu navegador no soporta transcripción de voz (usa Chrome o Edge)', 'warning');
+    return;
+  }
+
+  if (transcripcionActiva) {
+    // Detener
+    if (reconocimientoVoz) reconocimientoVoz.stop();
+    transcripcionActiva = false;
+    btnEl.textContent = 'Iniciar transcripción';
+    estadoEl.textContent = 'Transcripción detenida — no se guardó audio ni video, solo el texto mostrado abajo.';
+    generarBtn.disabled = transcripcionTexto.trim().length === 0;
+    return;
+  }
+
+  // Iniciar
+  reconocimientoVoz = new SpeechRecognitionAPI();
+  reconocimientoVoz.lang = 'es-ES';
+  reconocimientoVoz.continuous = true;
+  reconocimientoVoz.interimResults = true;
+
+  reconocimientoVoz.onresult = (event) => {
+    let interino = '';
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      const texto = event.results[i][0].transcript;
+      if (event.results[i].isFinal) {
+        transcripcionTexto += texto + ' ';
+      } else {
+        interino += texto;
+      }
+    }
+    boxEl.textContent = transcripcionTexto + (interino ? ('… ' + interino) : '');
+    boxEl.scrollTop = boxEl.scrollHeight;
+    generarBtn.disabled = transcripcionTexto.trim().length === 0;
+  };
+
+  reconocimientoVoz.onerror = (event) => {
+    console.error('Error de transcripción:', event.error);
+    if (event.error === 'not-allowed') {
+      toast('Permiso de micrófono denegado para la transcripción', 'warning');
+    }
+  };
+
+  // Si el navegador corta el reconocimiento por silencio prolongado,
+  // lo reiniciamos automáticamente mientras siga "activo".
+  reconocimientoVoz.onend = () => {
+    if (transcripcionActiva) {
+      try { reconocimientoVoz.start(); } catch (e) {}
+    }
+  };
+
+  try {
+    reconocimientoVoz.start();
+  } catch (e) {
+    toast('No se pudo iniciar la transcripción', 'warning');
+    return;
+  }
+
+  transcripcionActiva = true;
+  btnEl.textContent = 'Detener transcripción';
+  estadoEl.textContent = 'Transcribiendo en vivo… no se guarda audio ni video, solo texto.';
+  boxEl.textContent = transcripcionTexto || 'Escuchando…';
+}
+
+async function generarNotaSOAP() {
+  const cfg = _soapConfig();
+  if (!cfg.endpoint || !cfg.apiKey) {
+    toast('Configura primero el endpoint y la API key en Configuración → Integraciones', 'warning');
+    return;
+  }
+  if (!transcripcionTexto.trim()) {
+    toast('Aún no hay transcripción para generar la nota', 'warning');
+    return;
+  }
+
+  const generarBtn = document.getElementById('soapGenerarBtn');
+  generarBtn.disabled = true;
+  generarBtn.textContent = 'Generando nota…';
+  toast('Generando borrador de nota SOAP…', 'info');
+
+  const promptSistema = 'Eres un asistente clínico que ayuda a un médico a redactar la nota de una teleconsulta en formato SOAP, en español, a partir de la transcripción de la conversación. ' +
+    'Devuelve EXCLUSIVAMENTE un bloque con estas cuatro secciones, cada una empezando en una línea nueva con la etiqueta exacta seguida de dos puntos, sin texto adicional antes o después:\n' +
+    'SUBJETIVO: <motivo de consulta y síntomas referidos por el paciente, en sus palabras>\n' +
+    'OBJETIVO: <hallazgos observables mencionados durante la consulta>\n' +
+    'ANALISIS: <impresión diagnóstica o análisis clínico>\n' +
+    'PLAN: <indicaciones, tratamiento, estudios o seguimiento>\n' +
+    'Si algún dato no se mencionó, escribe "No referido en la consulta" en esa sección. Esto es un borrador para que el médico lo revise y edite — nunca inventes datos que no estén en la transcripción.';
+
+  try {
+    const resp = await fetch(cfg.endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + cfg.apiKey
+      },
+      body: JSON.stringify({
+        model: cfg.modelo || undefined,
+        messages: [
+          { role: 'system', content: promptSistema },
+          { role: 'user', content: 'Transcripción de la teleconsulta:\n\n' + transcripcionTexto.trim() }
+        ],
+        temperature: 0.2
+      })
+    });
+
+    const data = await resp.json();
+    if (!resp.ok) {
+      console.error('Error del proveedor de IA:', data);
+      toast('El proveedor de IA devolvió un error. Revisa la consola.', 'warning');
+      generarBtn.disabled = false;
+      generarBtn.textContent = 'Generar nota SOAP con IA';
+      return;
+    }
+
+    const contenido = data.choices?.[0]?.message?.content || '';
+    _parsearYLlenarSOAP(contenido);
+
+    document.getElementById('soapCamposWrap').style.display = 'block';
+    toast('Borrador SOAP generado — revísalo antes de guardar', 'success');
+
+  } catch (err) {
+    console.error(err);
+    toast('No se pudo conectar con el proveedor de IA', 'warning');
+  }
+
+  generarBtn.disabled = false;
+  generarBtn.textContent = 'Generar nota SOAP con IA';
+}
+
+function _parsearYLlenarSOAP(texto) {
+  const extraer = (etiqueta, siguientes) => {
+    const patron = new RegExp(etiqueta + ':\\s*([\\s\\S]*?)(?=(' + siguientes.join('|') + '):|$)', 'i');
+    const match = texto.match(patron);
+    return match ? match[1].trim() : '';
+  };
+  document.getElementById('soapSubjetivo').value = extraer('SUBJETIVO', ['OBJETIVO','ANALISIS','PLAN']);
+  document.getElementById('soapObjetivo').value  = extraer('OBJETIVO',  ['ANALISIS','PLAN']);
+  document.getElementById('soapAnalisis').value  = extraer('ANALISIS', ['PLAN']);
+  document.getElementById('soapPlan').value      = extraer('PLAN', ['$']);
+}
+
+function guardarNotaSOAP() {
+  const s = document.getElementById('soapSubjetivo').value.trim();
+  const o = document.getElementById('soapObjetivo').value.trim();
+  const a = document.getElementById('soapAnalisis').value.trim();
+  const p = document.getElementById('soapPlan').value.trim();
+
+  const notaFormateada =
+    'NOTA SOAP (borrador IA, revisado por el médico)\n\n' +
+    'S — Subjetivo:\n' + s + '\n\n' +
+    'O — Objetivo:\n' + o + '\n\n' +
+    'A — Análisis:\n' + a + '\n\n' +
+    'P — Plan:\n' + p;
+
+  const notasTextarea = document.getElementById('notasConsultaTextarea');
+  notasTextarea.value = notasTextarea.value
+    ? (notasTextarea.value + '\n\n' + notaFormateada)
+    : notaFormateada;
+
+  descartarNotaSOAP();
+  toast('Nota SOAP añadida a "Notas de consulta" — pulsa Guardar ahí para confirmarla', 'success');
+}
+
+function descartarNotaSOAP() {
+  transcripcionTexto = '';
+  document.getElementById('soapTranscripcionBox').textContent = 'La transcripción de la conversación aparecerá aquí en vivo…';
+  document.getElementById('soapCamposWrap').style.display = 'none';
+  ['soapSubjetivo','soapObjetivo','soapAnalisis','soapPlan'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('soapGenerarBtn').disabled = true;
+}
+
+function limpiarNotasConsulta() {
+  const el = document.getElementById('notasConsultaTextarea');
+  if (el) el.value = '';
+  toast('Notas de consulta limpiadas','info');
+}
+
+function showApptDetail(key) { openPatientPanel(key); }
+function openPatient(key)    { openPatientPanel(key); }
+
+/* ============================================================
+   MÓDULO PACIENTES — render real, búsqueda y filtros funcionales
+   ============================================================ */
+function _patientCardBadge(p) {
+  if (p.esNuevo) return { cls:'badge-tele', label:'Nuevo' };
+  if (p.estado === 'Cancelada')  return { cls:'badge-canc', label:'Canceló' };
+  if (p.estado === 'Pendiente')  return { cls:'badge-pend', label:'Pendiente' };
+  return { cls:'badge-conf', label:'Activo' };
+}
+
+function filterPatients(el, f) {
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  renderPatientsGrid();
+}
+
+function limpiarFiltrosPacientes() {
+  const input = document.getElementById('pacientesSearchInput');
+  if (input) input.value = '';
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  const chipTodos = document.querySelector('.filter-chip[data-filter="todos"]');
+  if (chipTodos) chipTodos.classList.add('active');
+  renderPatientsGrid();
+  toast('Búsqueda y filtros limpiados','info');
+}
+
+function renderPatientsGrid() {
+  const grid = document.getElementById('patientsGrid');
+  if (!grid) return;
+
+  const chipActivo = document.querySelector('.filter-chip.active');
+  const filtro = chipActivo ? chipActivo.dataset.filter : 'todos';
+  const texto = (document.getElementById('pacientesSearchInput').value || '').trim().toLowerCase();
+
+  let entries = Object.entries(PATIENTS);
+
+  if (filtro === 'activos') {
+    entries = entries.filter(([,p]) => p.estado !== 'Cancelada');
+  } else if (filtro === 'crónicos') {
+    entries = entries.filter(([,p]) => !!p.cronico);
+  }
+
+  if (texto) {
+    entries = entries.filter(([k,p]) => {
+      return p.name.toLowerCase().includes(texto)
+          || p.id.toLowerCase().includes(texto)
+          || p.dx.toLowerCase().includes(texto)
+          || k.toLowerCase().includes(texto);
+    });
+  }
+
+  entries.sort((a,b) => a[1].name.localeCompare(b[1].name, 'es'));
+
+  document.getElementById('pacientesCount').textContent = Object.keys(PATIENTS).length + ' pacientes registrados';
+
+  if (!entries.length) {
+    grid.innerHTML = '<div class="section-sep" style="grid-column:1/-1;color:var(--gray-300);">No se encontraron pacientes con esos criterios</div>';
+    return;
+  }
+
+  grid.innerHTML = entries.map(([key,p])=>{
+    const badge = _patientCardBadge(p);
+    const tags = (p.tags && p.tags.length ? p.tags : [p.dx, 'Teleconsulta'])
+      .map(t=>`<span class="tag${t==='Teleconsulta'?' tag-blue':''}">${t}</span>`).join('');
+    return `<div class="patient-card" onclick="openPatient('${key}')">
+      <div class="patient-card-top">
+        <div class="patient-avatar-lg" style="background:${p.bg};color:${p.fg};">${p.avatar}</div>
+        <div><div class="patient-card-name">${p.name}</div><div class="patient-card-id">${p.id}</div></div>
+      </div>
+      <div class="patient-card-tags">${tags}</div>
+      <div class="patient-card-footer">
+        <span class="patient-card-meta">${p.ultimaCitaTexto || 'Sin citas registradas'}</span>
+        <span class="appt-badge ${badge.cls}">${badge.label}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ---------- Modal "Nuevo paciente" ---------- */
+function abrirModalNuevoPaciente() {
+  document.getElementById('modalPacienteOverlay').classList.add('open');
+}
+function closeModalPaciente() {
+  document.getElementById('modalPacienteOverlay').classList.remove('open');
+}
+function closeModalPacienteOutside(e) {
+  if (e.target === document.getElementById('modalPacienteOverlay')) closeModalPaciente();
+}
+function limpiarFormPaciente() {
+  document.getElementById('np_nombre').value = '';
+  document.getElementById('np_cedula').value = '';
+  document.getElementById('np_fechaNacimiento').value = '';
+  document.getElementById('np_paisNacimiento').value = '';
+  document.getElementById('np_edad').value = '';
+  document.getElementById('np_telefono').value = '';
+  document.getElementById('np_email').value = '';
+  document.getElementById('np_nombre').focus();
+  toast('Campos del formulario limpiados','info');
+}
+
+// Calcula la edad en años a partir de la fecha de nacimiento y la
+// escribe automáticamente en el campo Edad (el médico aún puede
+// ajustarla manualmente si lo necesita).
+function _autoCalcularEdadPaciente() {
+  const fechaVal = document.getElementById('np_fechaNacimiento').value;
+  if (!fechaVal) return;
+  const [y,m,d] = fechaVal.split('-').map(Number);
+  const nacimiento = new Date(y, m-1, d);
+  const hoy = new Date(TODAY_Y, TODAY_M-1, TODAY_D);
+  let edad = hoy.getFullYear() - nacimiento.getFullYear();
+  const aunNoCumple = (hoy.getMonth() < nacimiento.getMonth()) ||
+    (hoy.getMonth() === nacimiento.getMonth() && hoy.getDate() < nacimiento.getDate());
+  if (aunNoCumple) edad--;
+  if (edad >= 0) document.getElementById('np_edad').value = edad;
+}
+
+const _AVATAR_PALETTE = [
+  { bg:'#B5D4F4', fg:'#0C447C' }, { bg:'#C0DD97', fg:'#27500A' },
+  { bg:'#FAC775', fg:'#633806' }, { bg:'#CECBF6', fg:'#3C3489' },
+  { bg:'#9FE1CB', fg:'#085041' }, { bg:'#F5C4B3', fg:'#712B13' },
+  { bg:'#F6C6DC', fg:'#7A1E4E' }, { bg:'#BFE3F0', fg:'#0B5266' },
+];
+
+function _generarClaveUnica(nombre) {
+  const iniciales = nombre.trim().split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('') || 'PX';
+  if (!PATIENTS[iniciales]) return iniciales;
+  let n = 2;
+  while (PATIENTS[iniciales + n]) n++;
+  return iniciales + n;
+}
+
+function _generarExpId() {
+  let max = 0;
+  Object.values(PATIENTS).forEach(p=>{
+    const m = /EXP-(\d+)/.exec(p.id || '');
+    if (m) max = Math.max(max, parseInt(m[1],10));
+  });
+  return 'EXP-' + String(max+1).padStart(4,'0');
+}
+
+function crearPaciente() {
+  const nombre = document.getElementById('np_nombre').value.trim();
+  if (!nombre) { document.getElementById('np_nombre').focus(); toast('Ingresa el nombre del paciente','warning'); return; }
+  const cedula = document.getElementById('np_cedula').value.trim();
+  const fechaNacimiento = document.getElementById('np_fechaNacimiento').value;
+  const paisNacimiento = document.getElementById('np_paisNacimiento').value.trim();
+  const edadVal = document.getElementById('np_edad').value.trim();
+  const telefono = document.getElementById('np_telefono').value.trim();
+  const email = document.getElementById('np_email').value.trim();
+  const dx = 'Sin diagnóstico registrado';
+
+  const key = _generarClaveUnica(nombre);
+  const color = _AVATAR_PALETTE[Object.keys(PATIENTS).length % _AVATAR_PALETTE.length];
+
+  PATIENTS[key] = {
+    name: nombre,
+    id: _generarExpId(),
+    avatar: key.slice(0,2),
+    bg: color.bg, fg: color.fg,
+    dx, edad: edadVal ? (edadVal + ' años') : 'No registrada',
+    telefono: telefono || 'No registrado',
+    email,
+    cedula,
+    fechaNacimiento,
+    paisNacimiento,
+    tags: [dx, 'Teleconsulta'],
+    cronico: false,
+    esNuevo: true,
+    ultimaCitaTexto: 'Paciente nuevo',
+    proxima: 'Sin citas programadas',
+    estado: 'Confirmada',
+    historial: [
+      { texto: 'Paciente registrado en el sistema.', fecha: TODAY_ISO.split('-').reverse().join('/') }
+    ]
+  };
+
+  rebuildNameToKey();
+  savePatients();
+  closeModalPaciente();
+  renderPatientsGrid();
+  toast('Paciente '+nombre+' agregado correctamente','success');
+}
+
+function markAllRead() {
+  document.querySelectorAll('.notif-dot').forEach(d=>{ d.style.opacity='0'; });
+  toast('Notificaciones marcadas como leídas','success');
+}
+
+/* ============================================================
+   CONFIGURACIÓN — TABS
+   ============================================================ */
+function selectConfigTab(el, tabId) {
+  document.querySelectorAll('.config-nav-item').forEach(i=>i.classList.remove('active'));
+  el.classList.add('active');
+  ['tab-perfil','tab-horario','tab-notif','tab-integ'].forEach(id=>{
+    const t=document.getElementById(id);
+    if(t) t.style.display = id===tabId ? 'block' : 'none';
+  });
+  // La pestaña Integraciones ya tiene su propio botón "Guardar configuración
+  // de IA" con un alcance específico (endpoint/API key/modelo). Se oculta
+  // aquí el "Guardar cambios" general para no mostrar dos botones Guardar
+  // en la misma pantalla.
+  const btnGeneral = document.getElementById('configGuardarCambiosBtn');
+  if (btnGeneral) btnGeneral.style.display = (tabId === 'tab-integ') ? 'none' : '';
+}
+
+function toggleSwitch(el) {
+  el.classList.toggle('on');
+  toast(el.classList.contains('on') ? 'Opción activada' : 'Opción desactivada','info');
+}
+
+/* ============================================================
+   DÍAS DE ATENCIÓN (Configuración > Horario) — persistente
+   ============================================================ */
+const HORARIO_STORAGE_KEY = 'agendaMedica_horario_v1';
+
+function guardarHorarioConfig() {
+  try {
+    const dias = {};
+    document.querySelectorAll('.day-chip').forEach(chip=>{
+      dias[chip.dataset.day] = {
+        activo: chip.classList.contains('active'),
+        horas: chip.querySelector('.day-hours').textContent.trim()
+      };
+    });
+    const cfg = {
+      dias,
+      horaInicioGeneral: document.getElementById('horaInicioGeneral').value,
+      horaCierreGeneral: document.getElementById('horaCierreGeneral').value,
+      duracion: document.getElementById('durCita').value
+    };
+    localStorage.setItem(HORARIO_STORAGE_KEY, JSON.stringify(cfg));
+  } catch(e) { console.error('No se pudo guardar el horario de atención:', e); }
+}
+
+function cargarHorarioConfig() {
+  let cfg = null;
+  try { const raw = localStorage.getItem(HORARIO_STORAGE_KEY); if (raw) cfg = JSON.parse(raw); }
+  catch(e) { console.error('No se pudo leer el horario de atención guardado:', e); }
+  if (!cfg) return; // primera vez: se queda con lo que ya trae el HTML por defecto
+
+  if (cfg.horaInicioGeneral) document.getElementById('horaInicioGeneral').value = cfg.horaInicioGeneral;
+  if (cfg.horaCierreGeneral) document.getElementById('horaCierreGeneral').value = cfg.horaCierreGeneral;
+  if (cfg.duracion) document.getElementById('durCita').value = cfg.duracion;
+
+  document.querySelectorAll('.day-chip').forEach(chip=>{
+    const d = cfg.dias && cfg.dias[chip.dataset.day];
+    if (!d) return;
+    chip.classList.toggle('active', !!d.activo);
+    chip.classList.toggle('off', !d.activo);
+    if (d.horas) chip.querySelector('.day-hours').textContent = d.horas;
+  });
+}
+
+function toggleDay(chip) {
+  const isActive = chip.classList.contains('active');
+  chip.classList.toggle('active', !isActive);
+  chip.classList.toggle('off', isActive);
+  // Si el día se desactiva, cerramos su editor si estaba abierto
+  const editor = document.getElementById('dayHoursEditor');
+  if (isActive && editor.dataset.day === chip.dataset.day) {
+    editor.classList.remove('open');
+    editor.innerHTML = '';
+  }
+  guardarHorarioConfig();
+  renderSlots();
+  toast(`${chip.dataset.daylabel}: día ${!isActive ? 'activado' : 'desactivado'}`, 'info');
+}
+
+function editDayHours(chip) {
+  const editor = document.getElementById('dayHoursEditor');
+  const day = chip.dataset.day;
+  const label = chip.dataset.daylabel;
+  const isOff = chip.classList.contains('off');
+
+  // Si ya está abierto el editor de este mismo día, lo cerramos (toggle)
+  if (editor.classList.contains('open') && editor.dataset.day === day) {
+    editor.classList.remove('open');
+    editor.innerHTML = '';
+    return;
+  }
+
+  const hoursText = chip.querySelector('.day-hours').textContent;
+  const [curStart, curEnd] = hoursText.includes('–') ? hoursText.split('–') : ['08:00','17:00'];
+
+  editor.dataset.day = day;
+  editor.innerHTML = `
+    <div class="day-hours-editor-title">Horario específico — ${label}</div>
+    <div class="day-hours-editor-row">
+      <div class="config-field">
+        <label class="config-label">Hora de inicio</label>
+        <input class="config-input" type="time" id="dayStartInput" value="${curStart.trim()}" ${isOff ? 'disabled' : ''}/>
+      </div>
+      <div class="config-field">
+        <label class="config-label">Hora de cierre</label>
+        <input class="config-input" type="time" id="dayEndInput" value="${curEnd.trim()==='—' ? '17:00' : curEnd.trim()}" ${isOff ? 'disabled' : ''}/>
+      </div>
+    </div>
+    <div class="day-hours-editor-actions">
+      <button class="btn-primary" onclick="saveDayHours('${day}')">Guardar</button>
+      <button class="btn-ghost" onclick="useGeneralHours('${day}')">Usar horario general</button>
+      <button class="btn-ghost" onclick="closeDayHoursEditor()">Cancelar</button>
+    </div>
+  `;
+  editor.classList.add('open');
+}
+
+function saveDayHours(day) {
+  const chip = document.querySelector(`.day-chip[data-day="${day}"]`);
+  const start = document.getElementById('dayStartInput').value;
+  const end = document.getElementById('dayEndInput').value;
+  if (!start || !end) { toast('Completa ambas horas','warning'); return; }
+  chip.querySelector('.day-hours').textContent = `${start}–${end}`;
+  closeDayHoursEditor();
+  guardarHorarioConfig();
+  renderSlots();
+  toast(`Horario de ${chip.dataset.daylabel} actualizado`, 'success');
+}
+
+function useGeneralHours(day) {
+  const chip = document.querySelector(`.day-chip[data-day="${day}"]`);
+  const generalStart = document.getElementById('horaInicioGeneral').value;
+  const generalEnd = document.getElementById('horaCierreGeneral').value;
+  chip.querySelector('.day-hours').textContent = `${generalStart}–${generalEnd}`;
+  closeDayHoursEditor();
+  guardarHorarioConfig();
+  renderSlots();
+  toast(`${chip.dataset.daylabel} ahora usa el horario general`, 'info');
+}
+
+function closeDayHoursEditor() {
+  const editor = document.getElementById('dayHoursEditor');
+  editor.classList.remove('open');
+  editor.innerHTML = '';
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+function toast(msg, type='info') {
+  const c=document.getElementById('toastContainer');
+  const t=document.createElement('div'); t.className='toast '+type;
+  const icons={success:'✓',info:'·',warning:'!'};
+  t.innerHTML='<span style="font-size:15px;font-weight:700;">'+icons[type]+'</span><span>'+msg+'</span>';
+  c.appendChild(t);
+  requestAnimationFrame(()=>{ requestAnimationFrame(()=>t.classList.add('show')); });
+  setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(),300); },3500);
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+loadPatients();
+cargarHorarioConfig();
+loadAppointments();
+renderDashboard();
+renderPatientsGrid();
+renderCal();
+renderSlots();
+document.getElementById('f_date').value = '2026-04-14';
+_cargarConfigSoapEnFormulario();
+</script>
